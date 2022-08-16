@@ -4,11 +4,27 @@
 <head>
  <meta charset="UTF-8">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+  integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+ <script src="./Scripts/servicios.js" defer></script>
  <title>Document</title>
 </head>
 
 <body>
- <script src="./Scripts/servicios.js"></script>
+ <div class="grandParent row" id="contenedorServicios">
+  <div class="parent" id="contenedorBotones">
+   <h1 id="tituloServicios">¿Que tipo de servicio necesitas?</h1>
+   <div class="contenedorBotones d-flex">
+    <button id="botonVideo" type="button" class="btn btn-primary m-4">Video</button>
+    <button id="botonFotografia" type="button" class="btn btn-primary m-4">Fotografía</button>
+    <button id="botonAnimacion" type="button" class="btn btn-primary m-4">Animación</button>
+    <button id="botonDiseño" type="button" class="btn btn-primary m-4">Diseño</button>
+   </div>
+   <p class="precioEstimado"></p>
+   <p class="tiempoEstimado"></p>
+   <p class="precioConIva"></p>
+  </div>
+ </div>
 </body>
 
 
