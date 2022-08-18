@@ -20,18 +20,11 @@ servicios.push(new servicio("video", 3500, 6));
 servicios.push(new servicio("animacion", 6500, 10));
 servicios.push(new servicio("diseño", 800, 3));
 
-// Aquí guardo en una variable los resultados de busqueda que el usuario puede solicitar, buscandolos en los objetos que se encuentran en el array
+// Aquí guardo en una variable el acceso al objeto correspondiente de cada servicio
 let fotografia = servicios.find((servicio) => servicio.nombre === "fotografia");
 let video = servicios.find((servicio) => servicio.nombre === "video");
 let animacion = servicios.find((servicio) => servicio.nombre === "animacion");
 let diseño = servicios.find((servicio) => servicio.nombre === "diseño");
-
-// En esta variable guardo el prompt con el que el usuario indicara que tipo de servicio busca
-/*
-let busqueda = prompt(
-  "¿Que tipo de servicio necesitas? (Fotografía, Video, Animacion, Diseño)"
-);
-*/
 
 // Aquí guardo en variables el acceso a cada uno de los botones
 let botonVideo = document.querySelector(
@@ -47,7 +40,7 @@ let botonDiseño = document.querySelector(
   "#contenedorServicios #contenedorBotones #botonDiseño"
 );
 
-// Aquí el aceso a los parrafos que mostraran a información
+// Aquí el aceso a los parrafos que mostraran la información
 const parrafoPrecioEstimado = document.querySelector(
   "#contenedorServicios #contenedorBotones .precioEstimado"
 );
@@ -132,68 +125,3 @@ function respuestaDiseño() {
       JSON.stringify(Math.round(diseño.sumaIVA()))
   );
 }
-
-/*
-// Por ultimo con este switch se ejecuta la busqueda respecto a la entrada del usuario
-switch (busqueda.toLowerCase()) {
-  case "fotografia":
-    console.log(fotografia);
-    alert(JSON.stringify(fotografia.precioEstimado));
-    alert(JSON.stringify(fotografia.tiempoEstimado));
-    alert(
-      "El precio inicial con IVA seria " +
-        JSON.stringify(Math.round(fotografia.sumaIVA()))
-    );
-    console.log(
-      "El precio inicial con IVA seria " +
-        JSON.stringify(Math.round(fotografia.sumaIVA()))
-    );
-    break;
-
-  case "video":
-    console.log(video);
-    alert(JSON.stringify(video.precioEstimado));
-    alert(JSON.stringify(video.tiempoEstimado));
-    alert(
-      "El precio inicial con IVA seria " +
-        JSON.stringify(Math.round(video.sumaIVA()))
-    );
-    console.log(
-      "El precio inicial con IVA seria " +
-        JSON.stringify(Math.round(video.sumaIVA()))
-    );
-    break;
-
-  case "animacion":
-    console.log(animacion);
-    alert(JSON.stringify(animacion.precioEstimado));
-    alert(JSON.stringify(animacion.tiempoEstimado));
-    alert(
-      "El precio inicial con IVA seria " +
-        JSON.stringify(Math.round(animacion.sumaIVA()))
-    );
-    console.log(
-      "El precio inicial con IVA seria " +
-        JSON.stringify(Math.round(animacion.sumaIVA()))
-    );
-    break;
-
-  case "diseño":
-    console.log(diseño);
-    alert(JSON.stringify(diseño.precioEstimado));
-    alert(JSON.stringify(diseño.tiempoEstimado));
-    alert(
-      "El precio inicial con IVA seria " +
-        JSON.stringify(Math.round(diseño.sumaIVA()))
-    );
-    console.log(
-      "El precio inicial con IVA seria " +
-        JSON.stringify(Math.round(diseño.sumaIVA()))
-    );
-    break;
-
-  default:
-    alert("Ingresa un valor correcto");
-    break;
-}
-*/
