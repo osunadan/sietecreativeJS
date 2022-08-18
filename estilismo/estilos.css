@@ -1,0 +1,22 @@
+body {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.grandParent {
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-content: center;
+}
+
+.parent {
+  width: 65vw;
+  height: 40vh;
+  background-color: #f7f7f7;
+  box-shadow: 18px 16px 40px rgba(0, 0, 0, 0.1);
+  border-radius: 18px;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+}
