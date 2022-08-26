@@ -1,0 +1,19 @@
+@import "variables";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: effra, sans-serif;
+  display: border-box;
+  width: 100vw;
+  -webkit-text-size-adjust: auto;
+  transition: 0.3s ease all;
+
+  &.dark {
+    background: map-get($colores, dark);
+  }
+}

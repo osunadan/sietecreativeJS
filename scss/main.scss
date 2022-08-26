@@ -1,0 +1,751 @@
+@import "reset";
+@import "mixins";
+@import "variables";
+
+/*Home Page*/
+/*Contenedor principal*/
+.masterContainer {
+  @include containerPrincipal(max-content max-content, 0px 40px);
+  grid: {
+    template-rows: 7rem 35rem 35rem 35rem 10rem max-content;
+    template-areas: "nav nav" "bienvenida bienvenida"
+      "resaltador01 resaltador01" "resaltador02 resaltador02"
+      "barraContacto barraContacto" "footer footer";
+  }
+
+  @media all and (max-width: 955px) {
+    .masterContainer {
+      grid-template-areas:
+        "nav"
+        "bienvenida"
+        "resaltador01"
+        "resaltador02"
+        "barraContacto"
+        "footer";
+    }
+  }
+}
+
+#NavbarB {
+  grid-area: nav;
+  background-color: map-get($colores, "secundario");
+  margin: 0;
+
+  body.dark & {
+    background-color: map-get($colores, terciario);
+  }
+
+  .navbar-toggler {
+    border: transparent;
+
+    .navbar-toggler-icon {
+      background-image: url(../media/hamburger-icon_02.svg);
+      width: 1.8em;
+      height: 1.8em;
+    }
+  }
+}
+
+#navBarItem {
+  body.dark & {
+    color: white;
+  }
+}
+// ----- ----- ----- ----- ----- Boton Dark Mode ----- ----- ----- ----- -----
+.switch {
+  width: 4rem;
+  height: 1.9rem;
+  background: #343d5b;
+  border-radius: 1000px;
+  border: none;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  outline: none;
+
+  &::after {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    background: #d7d7d7;
+    top: 0px;
+    left: 0;
+    right: unset;
+    border-radius: 100px;
+    transition: 0.6s ease all;
+    box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.2);
+  }
+
+  &.active {
+    background: map-get($colores, principal);
+    color: map-get($colores, principal);
+    &::after {
+      right: 0;
+      left: unset;
+    }
+  }
+}
+
+/* Mensaje de bienvenida */
+.containerInterno01 {
+  @include containerPrincipal(inherit, 30px, none);
+  grid-area: bienvenida;
+
+  a.cta {
+    background-color: map-get($colores, principal);
+    color: map-get($colores, secundario);
+    border-radius: 5px;
+    padding: 18px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 30px;
+    width: 12rem;
+    font-weight: map-get($fuentes, parrafo);
+
+    &:link {
+      @extend a.cta;
+      background-color: map-get($colores, principal);
+    }
+
+    &:visited {
+      @extend a.cta;
+      background-color: #9a7b28;
+    }
+
+    &:hover {
+      background-color: map-get($colores, secundario);
+      color: map-get($colores, principal);
+      border: 1px solid #ecc042;
+    }
+  }
+
+  .videoContenedor {
+    justify-self: center;
+
+    .videoBienvenida {
+      max-width: 500px;
+
+      @media all and (max-width: 600px) {
+        width: 20rem;
+        justify-self: center;
+      }
+    }
+  }
+}
+
+/* Resaltador de la marca 01 */
+.containerInterno02 {
+  @include containerPrincipal(inherit, 30px, none);
+  grid-area: resaltador01;
+}
+
+/* Resaltador de la marca 02 */
+.containerInterno03 {
+  @include containerPrincipal(inherit, 30px, none);
+  grid-area: resaltador02;
+}
+
+/* Footer */
+.barraContactoConteiner {
+  display: grid;
+  grid: {
+    area: barraContacto;
+    template-rows: 1fr;
+    template-columns: 1fr 1fr;
+  }
+  background: linear-gradient(
+    90deg,
+    rgba(233, 220, 180, 1) 0%,
+    rgba(236, 192, 66, 1) 48%,
+    rgba(238, 208, 120, 1) 100%
+  );
+  width: 100vw;
+
+  .logoBarraContactoContenedor {
+    @include flex(none, wrap, flex-end, flex-start);
+    align-self: baseline;
+    margin-right: 20px;
+
+    .logoBarraContacto {
+      width: 7rem;
+    }
+  }
+
+  .textoBarraContacto {
+    @include flex(column, wrap, flex-start, flex-start);
+    align-items: flex-start;
+  }
+
+  .cta02 {
+    border: 1px solid map-get($colores, secundario);
+    border-radius: 5px;
+    color: white !important;
+    padding: 18px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-weight: 100;
+
+    &:link {
+      @extend .cta02;
+    }
+
+    &:visited {
+      @extend .cta02;
+    }
+
+    &:hover {
+      @extend .cta02;
+      color: map-get($colores, terciario) !important;
+      background-color: map-get($colores, secundario);
+    }
+  }
+}
+
+.footerContainer {
+  @include flex(column, wrap, center, center);
+  grid-area: footer;
+  background-color: map-get($colores, terciario);
+  color: map-get($colores, secundario);
+
+  .socialMediaEnlaces {
+    @include flex(row, nowrap, none, none);
+    max-width: max-content;
+    margin: 20px 0px 0px 0px;
+
+    a.redsocial {
+      color: map-get($colores, secundario) !important;
+      text-decoration: underline;
+      padding: 0px 18px;
+      font-weight: 100;
+
+      &:visited {
+        color: #bdbdbd !important;
+      }
+
+      &:hover {
+        color: #ecc042 !important;
+      }
+    }
+  }
+
+  .conclusion {
+    @include flex(column, wrap, center, center);
+    margin: 20px;
+    @media all and (max-width: 600px) {
+      margin: 20px 40px;
+    }
+
+    .mexico {
+      color: map-get($colores, secundario) !important;
+      font-weight: map-get($fuentes, parrafo);
+      font-size: 16pt;
+    }
+
+    .parrafo03 {
+      color: map-get($colores, secundario) !important;
+    }
+  }
+}
+
+/* Pagina: Nuestro trabajo*/
+.masterContainerNuestroTrabajo {
+  @include containerPrincipal(none, 0px 40px);
+  grid: {
+    template-rows: 7rem 35rem 10rem 10rem 60% 12rem 14rem;
+    template-areas: "nav" "titulosTrabajos" "botones" "infoServicios"
+      "listaVideos" "barraContacto" "footer";
+  }
+  align-content: inherit;
+
+  @media all and (max-width: 955px) {
+    grid-template-rows: 7rem 35rem 10rem 70% 12rem 14rem;
+    grid-template-areas:
+      "nav"
+      "titulosTrabajos"
+      "listaVideos"
+      "barraContacto"
+      "footer";
+  }
+
+  .containerInterno04 {
+    @include containerPrincipal(max-content max-content, 30px, none);
+    grid-area: titulosTrabajos;
+  }
+
+  .masterBoxBotones {
+    grid-area: botones;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .filterBoxContainer a {
+      margin: 0.5rem;
+
+      body.dark & {
+        color: white;
+      }
+    }
+    .filterBoxContainer a:hover {
+      background-color: black;
+      color: white;
+    }
+  }
+
+  .infoServiciosContainer {
+    grid-area: infoServicios;
+    justify-self: center;
+    display: none;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    background-color: #bdbdbd;
+    border-radius: 1rem;
+    width: 40%;
+  }
+
+  .infoItem {
+    width: max-content;
+    align-self: center;
+    font-size: 14pt;
+    font-family: map-get($fuentes, bold);
+  }
+}
+
+.portfolioContainer {
+  width: 80%;
+  margin: 80px auto;
+  grid-area: listaVideos;
+
+  @media all and (max-width: 955px) {
+    width: 100%;
+  }
+
+  .fila {
+    @include flex(none, wrap, center, center);
+    align-items: center;
+  }
+
+  .columna {
+    @include flex(none, wrap, space-around, none);
+    flex-basis: 74em;
+    min-width: 250px;
+
+    @media all and (max-width: 955px) {
+      align-items: center;
+    }
+  }
+
+  .content-container {
+    @include flex(column, wrap, center, center);
+    align-items: center;
+    margin: 20px 0;
+    border-radius: 15px;
+    overflow: hidden;
+    width: 30%;
+    height: fit-content;
+
+    @media all and (max-width: 955px) {
+      width: 45%;
+    }
+
+    @media all and (max-width: 600px) {
+      width: 75%;
+    }
+
+    .tituloVideos {
+      font-weight: map-get($fuentes, titulo);
+      font-size: 18pt;
+      margin: 10px 10px;
+      align-self: flex-start;
+
+      body.dark & {
+        color: white;
+      }
+
+      @media all and (max-width: 955px) {
+        align-self: center;
+      }
+    }
+
+    .subtituloVideos {
+      @extend .tituloVideos;
+      font-weight: map-get($fuentes, parrafo);
+      font-size: 16pt;
+    }
+  }
+
+  .small-img {
+    position: relative;
+    border-radius: 15px;
+    width: 14rem;
+  }
+
+  .imagenPreview {
+    width: 300px;
+  }
+}
+
+.play-btn {
+  width: 70px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 70px;
+  cursor: pointer;
+
+  @media all and (max-width: 955px) {
+    width: 40px;
+  }
+}
+
+.video-player {
+  @extend .play-btn;
+  width: 60%;
+  cursor: pointer;
+  display: none;
+  position: fixed;
+  z-index: 101;
+
+  @media all and (max-width: 955px) {
+    width: 94%;
+  }
+
+  @media all and (max-height: 600px) {
+    width: 70%;
+    top: 255px;
+  }
+}
+
+.video-player2 {
+  @extend .video-player;
+}
+
+.video-player3 {
+  @extend .video-player;
+}
+
+.video-player4 {
+  @extend .video-player;
+}
+
+.video-player5 {
+  @extend .video-player;
+}
+
+.video-player6 {
+  @extend .video-player;
+}
+
+/* Pagina: Resultados*/
+.masterContainerResultados {
+  @include containerPrincipal(max-content max-content, 0px 40px, 1fr);
+  grid-template-rows: 7rem 38rem 65rem 65rem 12rem max-content;
+  grid-template-areas:
+    "nav nav"
+    "titulosResultados titulosResultados"
+    "casoExito01 casoExito01"
+    "casoExito02 casoExito02 "
+    "barraContacto barraContacto"
+    "footer footer";
+
+  @media all and (max-width: 955px) {
+    grid-template-areas:
+      "nav"
+      "titulosResultados"
+      "casoExito01"
+      "casoExito02 "
+      "barraContacto"
+      "footer";
+  }
+
+  @media all and (min-width: 768px) {
+    grid-template-rows: 7rem 38rem 75rem 55rem 12rem max-content;
+  }
+
+  @media all and (min-width: 955px) {
+    grid-template-rows: 7rem 38rem 55rem 55rem 12rem max-content;
+  }
+
+  .containerInterno05 {
+    @include containerPrincipal(inherit, 30px, none);
+    grid-area: titulosResultados;
+  }
+
+  .casoDeExitoContenedor01 {
+    @include containerPrincipal(max-content max-content, 20px, none);
+    grid-area: casoExito01;
+    height: 65rem;
+
+    @media all and (min-width: 768px) {
+      height: 75rem;
+    }
+
+    @media all and (max-height: 600px) {
+      height: 68rem;
+    }
+
+    .textoCaso {
+      @include flex(column, nowrap, none, center);
+      align-items: center;
+    }
+
+    .videoBienvenida {
+      max-width: 500px;
+
+      @media all and (max-width: 600px) {
+        width: 20rem;
+        justify-self: center;
+      }
+    }
+  }
+
+  .casoDeExitoContenedor02 {
+    @include containerPrincipal(max-content max-content, 20px, none);
+    grid-area: casoExito02;
+
+    .videoBienvenida {
+      max-width: 500px;
+
+      @media all and (max-width: 600px) {
+        width: 20rem;
+        justify-self: center;
+      }
+    }
+
+    #video--Resultados__02 {
+      @media all and (max-width: 955px) {
+        order: -1;
+      }
+    }
+
+    .textoCaso {
+      @include flex(column, nowrap, none, center);
+      align-items: center;
+    }
+  }
+}
+/* Pagina: Quienes somos*/
+.masterContainerQuienesSomos {
+  @include containerPrincipal(22rem max-content, 0px 0px);
+  grid-template-rows: 7rem 60rem 12rem max-content;
+  grid-template-areas:
+    "nav nav"
+    "quienesSomos quienesSomos"
+    "barraContacto barraContacto"
+    "footer footer";
+
+  @media all and (max-width: 955px) {
+    grid-template-rows: 7rem 80rem 12rem max-content;
+  }
+
+  .containerInterno06 {
+    @include containerPrincipal(inherit, 30px, 22rem);
+    grid-area: quienesSomos;
+    align-self: flex-start;
+    margin: 5rem 0;
+
+    #imagenTeam {
+      width: 100%;
+
+      .fotoTeam {
+        width: 100%;
+        border-radius: 20px;
+      }
+    }
+  }
+}
+
+/* Pagina: Contacto*/
+.masterContainerContacto {
+  @include containerPrincipal(max-content, 40px, 1fr);
+  grid-template-rows: 7rem 90rem;
+  grid-template-areas:
+    "nav"
+    "formulario";
+
+  .formularioContainer {
+    grid-area: formulario;
+    @include flex(column, nowrap, none, none);
+    align-items: center;
+    width: 100%;
+    height: 100%;
+
+    .TituloContactoContainer {
+      background-color: map-get($colores, principal);
+      width: 100vw;
+      @include flex(column, nowrap, center, center);
+      align-items: center;
+      margin: 2rem 0rem;
+      padding: 5rem 5rem;
+
+      .tituloContacto {
+        margin: 2rem 0rem;
+      }
+    }
+  }
+
+  .formularioContainerInterno {
+    background-color: #ebebeb;
+    padding: 1rem 5rem;
+    border-radius: 1rem;
+    display: flex;
+
+    @media all and (max-width: 425px) {
+      padding: 0rem 3rem;
+    }
+
+    .formulario {
+      display: flex;
+      flex-direction: column;
+      margin: 5rem 0rem;
+      width: 28rem;
+
+      @media all and (max-width: 955px) {
+        width: 15rem;
+      }
+
+      #Item {
+        width: 100%;
+        margin: 0.5rem 0rem;
+
+        #labelStyle {
+          font-weight: map-get($fuentes, titulo);
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}
+
+.footerContainerContacto {
+  @extend .footerContainer;
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  height: 20%;
+
+  @media all and (min-width: 768px) {
+    height: 15%;
+  }
+
+  @media all and (max-height: 680px) {
+    display: none;
+  }
+
+  .ContainerFooterContacto {
+    display: flex;
+    flex-direction: column;
+    width: 40rem;
+
+    @media all and (max-width: 955px) {
+      width: 20rem;
+    }
+
+    .tituloFooterContacto {
+      font-weight: map-get($fuentes, bold);
+      font-size: 14pt;
+      margin: 5px 0;
+    }
+
+    .parrafoFooterContacto {
+      font-weight: map-get($fuentes, parrafo);
+
+      @media all and (max-width: 955px) {
+        font-size: 11pt;
+        max-width: 20rem;
+      }
+    }
+  }
+}
+
+/* Estilos generales*/
+.titulo {
+  font-weight: map-get($fuentes, titulo);
+  font-size: 24pt;
+  animation: up-to-down 0.8s ease-out;
+  overflow-y: hidden;
+
+  body.dark & {
+    color: white;
+  }
+
+  @media all and (max-width: 955px) {
+    text-align: center;
+    max-width: 22rem;
+    font-size: 18pt;
+  }
+
+  @keyframes up-to-down {
+    0% {
+      transform: translateY(-30%);
+      color: rgba(0, 0, 0, 0);
+    }
+    100% {
+      transform: translateY(0%);
+      color: rgba(0, 0, 0, 1);
+    }
+  }
+}
+
+.textoBienvenida {
+  @include flex(column, wrap, center, center);
+  margin: 0px 15px 0px 60px;
+  max-width: 30rem;
+
+  @media all and (max-width: 955px) {
+    margin: 0px 0px 0px 0px;
+    max-width: 28rem;
+    align-items: center;
+  }
+}
+
+ul {
+  display: inline-block;
+  margin-left: 0px;
+}
+
+li {
+  display: inline-block;
+  padding: 1rem;
+}
+
+video {
+  border-radius: 20px;
+}
+
+.parrafo {
+  font-weight: map-get($fuentes, parrafo);
+  font-size: 1rem;
+  max-width: 386px;
+  overflow-y: hidden;
+
+  body.dark & {
+    color: white;
+  }
+}
+
+.illustracion {
+  width: 28rem;
+
+  @media all and (max-width: 600px) {
+    width: 22rem;
+  }
+}
+
+.illustracionContenedor {
+  align-self: center;
+  justify-self: center;
+}

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Trabajos destacados de Siete Creative</title>
+ <meta name="description"
+  content="Preview de nuestros trabajos más destacados, los cuales han servido a nuestros clientes para lograr efectivamente su comunicación y alcanzar a sus potenciales clientes">
+ <link rel="stylesheet" href="https://use.typekit.net/rxb5wgu.css">
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+  integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+ <link rel="stylesheet" type="text/css" href="../css/main.css">
+ <script src="../Scripts/scripts.js" defer></script>
+</head>
+
+<body>
+ <div class="masterContainerNuestroTrabajo">
+  <!--Navbar hecha con bootstrap-->
+  <div id="NavbarB" class="container-fluid fixed-top">
+   <div class="container-xl">
+    <nav id="contenedorNavB" class="navbar navbar-expand-lg">
+     <div id="contenedorInternoNavBar" class="container-fluid row">
+      <a class="navbar-brand col-4 col-sm-2" href="../index.html">
+       <img src="../images/logo.png" alt="Logo de Siete Creative Studio" width="80">
+      </a>
+      <button class="navbar-toggler col-2 col-sm-1" type="button" data-bs-toggle="collapse"
+       data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+       aria-label="Toggle navigation">
+       <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-center col-10" id="navbarSupportedContent">
+       <ul class="navbar-nav mb-lg-0">
+        <li class="nav-item">
+         <a id="navBarItem" class="nav-link active" aria-current="page" href="./nuestro-trabajo.html">Nuestro
+          trabajo</a>
+        </li>
+        <li class="nav-item">
+         <a id="navBarItem" class="nav-link" href="resultados.html">Resultados</a>
+        </li>
+        <li class="nav-item">
+         <a id="navBarItem" class="nav-link" href="quienes-somos.html">
+          Quienes somos
+         </a>
+        </li>
+        <li class="nav-item">
+         <a id="navBarItem" class="nav-link" href="contacto.html">Contacto</a>
+        </li>
+       </ul>
+       <button class="switch" id="switch">
+       </button>
+      </div>
+     </div>
+    </nav>
+   </div>
+
+  </div>
+  <!--Titulo-->
+  <div class="containerInterno04">
+   <div class="textoBienvenida">
+    <h2 class="titulo">Encuentra el estilo adecuado para tu video</h2>
+    <p class="parrafo">Aquí puede encontrar una lista con nuestros trabajos realizados en motion graphics,
+     producción audiovisual. Deja fluir tu creatividad para tu proyecto</p>
+   </div>
+   <div class="illustracionContenedor">
+    <img class="illustracion" src="../media/videos-illustration.svg"
+     alt="Ilustración que representa una galeria de videos">
+   </div>
+  </div>
+  <!--Botones-->
+  <div class="masterBoxBotones">
+   <p class="titulo">¿Que tipo de servicio necesitas?</p>
+   <div class="filterBoxContainer" id="filterBox">
+    <a href="#" class="btn" data-tipo="all">Todos</a>
+    <a href="#" class="btn" data-tipo="video">Video</a>
+    <a href="#" class="btn" data-tipo="foto">Fotografia</a>
+    <a href="#" class="btn" data-tipo="animacion">Animación</a>
+    <a href="#" class="btn" data-tipo="diseño">Diseño</a>
+    <p class="parrafo"></p>
+   </div>
+  </div>
+  <div id="infoServiciosContainer" class="infoServiciosContainer">
+  </div>
+
+
+  <!--Lista de videos-->
+  <div class="portfolioContainer">
+   <div class="fila">
+    <div class="columna" id="muestraServicios">
+     <!--Ficha 01-->
+     <div class="content-container muestraServicios animacion">
+      <div class="small-img">
+       <img class="imagenPreview" src="../images/Preview-Videos/Preview01_01.png" alt="Preview del primer video">
+       <img src="../media/Icon-play.svg" alt="" class="play-btn" onclick="playVideo1()">
+      </div>
+      <p class="tituloVideos">Finnovista</p>
+      <p class="subtituloVideos">Video recap de su evento Finnosummit Connect 2021</p>
+      <!--Video Player, video 01-->
+      <div class="video-player" id="videoPlayer1">
+       <video width="100%" controls id="myVideo1" poster="../images/video-placeholder/portafolio01-placeholder.png">
+        <source src="../media/Video-Portafolio-01.mp4" type="video/mp4">
+        <source src="../media/Video-Portafolio-01_02.webm" type="video/webm">
+        <p>Tu navegador no soporta video HTML5. Aquí está el <a href="https://vimeo.com/652272101">enlace del video</a>
+        </p>
+       </video>
+       <img src="../media/Icon-close.svg" alt="" class="close-btn" onclick="stopVideo()" id="closeVideo">
+      </div>
+     </div>
+     <!--Ficha 02-->
+     <div class="content-container muestraServicios animacion">
+      <div class="small-img">
+       <img class="imagenPreview" src="../images/Preview-Videos/Preview02_01.png" alt="Preview del primer video">
+       <img src="../media/Icon-play.svg" alt="" class="play-btn" onclick="playVideo2()">
+      </div>
+      <p class="tituloVideos">Collective Talks - Season 1</p>
+      <p class="subtituloVideos">Video recap de la primera temporada del podcast Collective Talks para Collective
+       Academy</p>
+      <!--Video Player, video 02-->
+      <div class="video-player2" id="videoPlayer2">
+       <video width="100%" controls id="myVideo2" poster="../images/video-placeholder/portafolio02-placeholder.png">
+        <source src="../media/Video-Portafolio-02.mp4" type="video/mp4">
+        <source src="../media/Video-Portafolio-02_02.webm" type="video/webm">
+        <p>Tu navegador no soporta video HTML5. Aquí está el <a href="https://vimeo.com/512617334">enlace del
+          video</a></p>
+       </video>
+       <img src="../media/Icon-close.svg" alt="" class="close-btn" onclick="stopVideo2()" id="closeVideo">
+      </div>
+     </div>
+     <!--Ficha 03-->
+     <div class="content-container muestraServicios video">
+      <div class="small-img">
+       <img class="imagenPreview" src="../images/Preview-Videos/Preview03_01.png" alt="Preview del primer video">
+       <img src="../media/Icon-play.svg" alt="" class="play-btn" onclick="playVideo3()">
+      </div>
+      <p class="tituloVideos">Hot Sale 2019</p>
+      <p class="subtituloVideos">Video publicitario para la campaña de Hot Sale de Mibo</p>
+      <!--Video Player, video 03-->
+      <div class="video-player3" id="videoPlayer3">
+       <video width="100%" controls id="myVideo3" poster="../images/video-placeholder/portafolio03-placeholder.png">
+        <source src="../media/Video-Portafolio-03.mp4" type="video/mp4">
+        <source src="../media/Video-Portafolio-03_02.webm" type="video/webm">
+        <p>Tu navegador no soporta video HTML5. Aquí está el <a href="https://vimeo.com/464396559">enlace del
+          video</a></p>
+       </video>
+       <img src="../media/Icon-close.svg" alt="" class="close-btn" onclick="stopVideo3()" id="closeVideo">
+      </div>
+     </div>
+     <!--Ficha 04-->
+     <div class="content-container muestraServicios animacion">
+      <div class="small-img">
+       <img class="imagenPreview" src="../images/Preview-Videos/Preview04_01.png" alt="Preview del primer video">
+       <img src="../media/Icon-play.svg" alt="" class="play-btn" onclick="playVideo4()">
+      </div>
+      <p class="tituloVideos">Transferencias a cualquier banco</p>
+      <p class="subtituloVideos">Explainer video para Mibo como parte de su campaña de tutoriales, donde explican las
+       funcionalidades de su app</p>
+      <!--Video Player, video 04-->
+      <div class="video-player4" id="videoPlayer4">
+       <video width="100%" controls id="myVideo4" poster="../images/video-placeholder/portafolio04-placeholder.png">
+        <source src="../media/Video-Portafolio-04.mp4" type="video/mp4">
+        <source src="../media/Video-Portafolio-04_02.webm" type="video/webm">
+        <p>Tu navegador no soporta video HTML5. Aquí está el <a href="https://vimeo.com/392820426">enlace del
+          video</a></p>
+       </video>
+       <img src="../media/Icon-close.svg" alt="" class="close-btn" onclick="stopVideo4()" id="closeVideo">
+      </div>
+     </div>
+     <!--Ficha 05-->
+     <div class="content-container muestraServicios video">
+      <div class="small-img">
+       <img class="imagenPreview" src="../images/Preview-Videos/Preview05_01.png" alt="Preview del primer video">
+       <img src="../media/Icon-play.svg" alt="" class="play-btn" onclick="playVideo5()">
+      </div>
+      <p class="tituloVideos">¿Qué puedes hacer con Mibo?</p>
+      <p class="subtituloVideos">Video publicitario promocionando las funcionalidades de la app de Mibo</p>
+      <!--Video Player, video 05-->
+      <div class="video-player5" id="videoPlayer5">
+       <video width="100%" controls id="myVideo5" poster="../images/video-placeholder/portafolio05-placeholder.png">
+        <source src="../media/Video-Portafolio-05.mp4" type="video/mp4">
+        <source src="../media/Video-Portafolio-05_02.webm" type="video/webm">
+        <p>Tu navegador no soporta video HTML5. Aquí está el <a href="https://vimeo.com/406065456">enlace del
+          video</a></p>
+       </video>
+       <img src="../media/Icon-close.svg" alt="" class="close-btn" onclick="stopVideo5()" id="closeVideo">
+      </div>
+     </div>
+     <!--Ficha 06-->
+     <div class="content-container muestraServicios video">
+      <div class="small-img">
+       <img class="imagenPreview" src="../images/Preview-Videos/Preview06_01.png" alt="Preview del primer video">
+       <img src="../media/Icon-play.svg" alt="" class="play-btn" onclick="playVideo6()">
+      </div>
+      <p class="tituloVideos">Weex Wallet</p>
+      <p class="subtituloVideos">Video publicitario para Weex Wallet mostrando las bondades de su producto</p>
+      <!--Video Player, video 06-->
+      <div class="video-player6" id="videoPlayer6">
+       <video width="100%" controls id="myVideo6" poster="../images/video-placeholder/portafolio06-placeholder.png">
+        <source src="../media/Video-Portafolio-06.mp4" type="video/mp4">
+        <source src="../media/Video-Portafolio-06_02.webm" type="video/webm">
+        <p>Tu navegador no soporta video HTML5. Aquí está el <a href="https://vimeo.com/343871903">enlace del
+          video</a></p>
+       </video>
+       <img src="../media/Icon-close.svg" alt="" class="close-btn" onclick="stopVideo6()" id="closeVideo">
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <!--Footer-->
+  <div class="barraContactoConteiner">
+   <div class="logoBarraContactoContenedor">
+    <img class="logoBarraContacto" src="../images/logo_blanco.png" alt="">
+   </div>
+   <div class="textoBarraContacto">
+    <p class="titulo">
+     ¿Tienes dudas?
+    </p>
+    <p class="parrafo">Aun mejor</p>
+    <a class="cta02" href="contacto.html">Escríbenos</a>
+   </div>
+  </div>
+  <div class="footerContainer">
+   <div class="socialMediaEnlaces">
+    <a class="redsocial" href="https://www.linkedin.com/company/siete-creative/" target="_blank">LinkedIn</a>
+    <a class="redsocial" href="https://www.instagram.com/sietecreative/" target="_blank">Instagram</a>
+    <a class="redsocial" href="https://vimeo.com/sietecreative" target="_blank">Vimeo</a>
+   </div>
+   <div class="conclusion">
+    <p class="mexico">México</p>
+    <p class="parrafo">© 2020–2022 Siete Creative Studio</p>
+   </div>
+  </div>
+ </div>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js"
+  integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
+ <script src="../scripts/botones.js"></script>
+</body>
+
+</html>

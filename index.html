@@ -4,29 +4,122 @@
 <head>
  <meta charset="UTF-8">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
-  integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
- <link rel="stylesheet" href="./estilismo/estilos.css">
- <script src="./Scripts/servicios.js" defer></script>
- <title>Document</title>
+ <title>Siete Creative: Estudio Creativo</title>
+ <meta name="description"
+  content="Somos un estudio creativo dedicado a la Producción Audiovisual, Diseño, Motion Design u Desarrollo Front End, que crea contenido memorable que diferencia e impulsa a las marcas">
+ <link rel="stylesheet" href="https://use.typekit.net/rxb5wgu.css">
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+  integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+ <link rel="stylesheet" type="text/css" href="./css/main.css">
+
 </head>
 
 <body>
- <div class="grandParent row" id="contenedorServicios">
-  <div class="parent" id="contenedorBotones">
-   <h1 id="tituloServicios">¿Que tipo de servicio necesitas?</h1>
-   <div class="contenedorBotones d-flex">
-    <button id="botonVideo" type="button" class="btn btn-primary m-4">Video</button>
-    <button id="botonFotografia" type="button" class="btn btn-primary m-4">Fotografía</button>
-    <button id="botonAnimacion" type="button" class="btn btn-primary m-4">Animación</button>
-    <button id="botonDiseño" type="button" class="btn btn-primary m-4">Diseño</button>
+ <!--Navbar hecha con bootstrap-->
+ <div class="masterContainer">
+  <div id="NavbarB" class="container-fluid fixed-top">
+   <div class="container-xl">
+    <nav id="contenedorNavB" class="navbar navbar-expand-lg">
+     <div id="contenedorInternoNavBar" class="container-fluid row">
+      <a class="navbar-brand col-4 col-sm-2" href="index.html">
+       <img src="images/logo.png" alt="Logo de Siete Creative Studio" width="80">
+      </a>
+      <button class="navbar-toggler col-2 col-sm-1" type="button" data-bs-toggle="collapse"
+       data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+       aria-label="Toggle navigation">
+       <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-center col-10" id="navbarSupportedContent">
+       <ul class="navbar-nav mb-lg-0">
+        <li class="nav-item">
+         <a class="nav-link active" aria-current="page" href="pages/nuestro-trabajo.html">Nuestro trabajo</a>
+        </li>
+        <li class="nav-item">
+         <a class="nav-link" href="pages/resultados.html">Resultados</a>
+        </li>
+        <li class="nav-item">
+         <a class="nav-link" href="pages/quienes-somos.html">
+          Quienes somos
+         </a>
+        </li>
+        <li class="nav-item">
+         <a class="nav-link" href="pages/contacto.html">Contacto</a>
+        </li>
+       </ul>
+      </div>
+     </div>
+    </nav>
    </div>
-   <p class="precioEstimado"></p>
-   <p class="tiempoEstimado"></p>
-   <p class="precioConIva"></p>
   </div>
+  <!--Mensaje de bienvenida-->
+  <main class="containerInterno01">
+   <header class="textoBienvenida">
+    <h1 class="titulo">
+     La solución creativa para impulsar la marca de los que no se conforman
+    </h1>
+    <a class="cta" href="pages/contacto.html">Cotiza tu proyecto</a>
+   </header>
+   <div class="videoContenedor">
+    <video class="videoBienvenida" loop autoplay muted
+     poster="images/video-placeholder/video-bienvenida-placeholder.png">
+     <source src="media/video-bienvenida.mp4" type="video/mp4">
+     <source src="media/video-bienvenida_02.webm" type="video/webm">
+     <p>Tu navegador no soporta video HTML5. Aquí está el <a href="https://vimeo.com/449065058">enlace del video</a>.
+     </p>
+    </video>
+   </div>
+  </main>
+  <!--Hightlight de la marca 01 -->
+  <section class="containerInterno02">
+   <div class="textoBienvenida">
+    <h2 class="titulo">Lo complejo desaparece con nosotros</h2>
+    <p class="parrafo">Contamos con una amplia red de colaboradores para ocuparnos de todo el proceso de producción,
+     desde la creación del guion, hasta la búsqueda de actores, edición y animación de cada proyecto</p>
+   </div>
+   <div class="illustracionContenedor">
+    <img class="illustracion" src="media/team-illustration.svg"
+     alt="Ilustración que representa nuestro equipo de trabajo">
+   </div>
+  </section>
+  <!--Hightlight de la marca 02 -->
+  <section class="containerInterno03">
+   <div class="illustracionContenedor">
+    <img class="illustracion" src="media/contenido-illustracion.svg"
+     alt="Ilustración de una persona manipulando un sitio web">
+   </div>
+   <div class="textoBienvenida">
+    <h2 class="titulo">Crece con contenido</h2>
+    <p class="parrafo">Comerciales, videos explicativos, marketing. Somos una plataforma para todas tus
+     necesidades visuales. Producimos más valor medible que cualquier otra agencia en México.</p>
+   </div>
+  </section>
+  <!--Footer-->
+  <section class="barraContactoConteiner">
+   <div class="logoBarraContactoContenedor">
+    <img class="logoBarraContacto" src="images/logo_blanco.png" alt="Logo de Seiete Creative Studio">
+   </div>
+   <div class="textoBarraContacto">
+    <h3 class="titulo">
+     ¿Tienes dudas?
+    </h3>
+    <p class="parrafo">Aun mejor</p>
+    <a class="cta02" href="pages/contacto.html">Escríbenos</a>
+   </div>
+  </section>
+  <footer class="footerContainer">
+   <div class="socialMediaEnlaces">
+    <a class="redsocial" href="https://www.linkedin.com/company/siete-creative/" target="_blank">LinkedIn</a>
+    <a class="redsocial" href="https://www.instagram.com/sietecreative/" target="_blank">Instagram</a>
+    <a class="redsocial" href="https://vimeo.com/sietecreative" target="_blank">Vimeo</a>
+   </div>
+   <div class="conclusion">
+    <p class="mexico">México</p>
+    <p class="parrafo">© 2020–2022 Siete Creative Studio</p>
+   </div>
+  </footer>
  </div>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js"
+  integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
 </body>
-
 
 </html>
