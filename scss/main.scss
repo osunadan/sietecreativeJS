@@ -2,6 +2,83 @@
 @import "mixins";
 @import "variables";
 
+/*--------------  Sobreescribo los estilos del alert de Sweet Alert ------------*/
+.swal2-popup {
+  background: #f7f7f7;
+
+  body.dark & {
+    background-color: map-get($colores, gris);
+  }
+  .swal2-title {
+    font-family: effra, sans-serif;
+    font-weight: map-get($fuentes, titulo);
+    color: map-get($colores, terciario);
+
+    body.dark & {
+      color: map-get($colores, secundario);
+    }
+  }
+
+  #swal2-html-container {
+    font-family: effra, sans-serif;
+    font-weight: map-get($fuentes, parrafo);
+    color: map-get($colores, terciario);
+    font-size: 16pt;
+
+    body.dark & {
+      color: map-get($colores, secundario);
+    }
+  }
+
+  .swal2-styled.swal2-confirm {
+    background-color: map-get($colores, principal);
+  }
+}
+
+.btnDescuento {
+  background-color: map-get($colores, principal);
+  color: map-get($colores, principal);
+  border-radius: 5px;
+  padding: 18px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 10px;
+  width: 8rem;
+  font-weight: map-get($fuentes, parrafo);
+  font-size: 12pt;
+
+  body.dark & {
+    background-color: map-get($colores, terciario);
+    color: map-get($colores, secundario);
+  }
+
+  &:link {
+    @extend .btnDescuento;
+    background-color: map-get($colores, principal);
+
+    body.dark & {
+      color: map-get($colores, secundario);
+    }
+  }
+
+  &:visited {
+    @extend .btnDescuento;
+    background-color: #9a7b28;
+    color: map-get($colores, secundario);
+  }
+
+  &:hover {
+    background-color: map-get($colores, terciario);
+    color: map-get($colores, principal);
+
+    body.dark & {
+      background-color: map-get($colores, principal);
+      color: map-get($colores, secundario);
+    }
+  }
+}
+
 /*Home Page*/
 /*Contenedor principal*/
 .masterContainer {
@@ -89,6 +166,7 @@
 }
 
 /* Mensaje de bienvenida */
+
 .containerInterno01 {
   @include containerPrincipal(inherit, 30px, none);
   grid-area: bienvenida;

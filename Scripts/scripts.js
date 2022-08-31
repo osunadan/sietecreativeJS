@@ -113,3 +113,19 @@ if (localStorage.getItem("dark-mode") === "true") {
 } else {
   document.body.classList.remove("dark");
 }
+
+// ----- ----- ----- ----- ----- Codigo de descuento ----- ----- ----- ----- -----
+
+setTimeout(() => {
+  Swal.fire({
+    title:
+      "<strong>Obten un 5% de descuento en tu primer contratación</strong>",
+    html: "<p>Utiliza el cupon:</p><p>MIPRIMERSERVICIO</p><a class='btnDescuento' href='contacto.html'>¡Lo quiero!</a>",
+    showCloseButton: true,
+    showCancelButton: false,
+    focusConfirm: false,
+    showConfirmButton: false,
+    confirmButtonText: null,
+    cancelButtonText: '<i class="fa fa-thumbs-down"></i>',
+  });
+}, 2000);

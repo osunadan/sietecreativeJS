@@ -17,6 +17,82 @@ body.dark {
   background: #131313;
 }
 
+/*--------------  Sobreescribo los estilos del alert de Sweet Alert ------------*/
+.swal2-popup {
+  background: #f7f7f7;
+}
+
+body.dark .swal2-popup {
+  background-color: #a4a3a3;
+}
+
+.swal2-popup .swal2-title {
+  font-family: effra, sans-serif;
+  font-weight: 400;
+  color: #060606;
+}
+
+body.dark .swal2-popup .swal2-title {
+  color: #f7f7f7;
+}
+
+.swal2-popup #swal2-html-container {
+  font-family: effra, sans-serif;
+  font-weight: 100;
+  color: #060606;
+  font-size: 16pt;
+}
+
+body.dark .swal2-popup #swal2-html-container {
+  color: #f7f7f7;
+}
+
+.swal2-popup .swal2-styled.swal2-confirm {
+  background-color: #ecc742;
+}
+
+.btnDescuento, .btnDescuento:link, .btnDescuento:visited {
+  background-color: #ecc742;
+  color: #ecc742;
+  border-radius: 5px;
+  padding: 18px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 10px;
+  width: 8rem;
+  font-weight: 100;
+  font-size: 12pt;
+}
+
+body.dark .btnDescuento {
+  background-color: #060606;
+  color: #f7f7f7;
+}
+
+.btnDescuento:link {
+  background-color: #ecc742;
+}
+
+body.dark .btnDescuento:link {
+  color: #f7f7f7;
+}
+
+.btnDescuento:visited {
+  background-color: #9a7b28;
+  color: #f7f7f7;
+}
+
+.btnDescuento:hover {
+  background-color: #060606;
+  color: #ecc742;
+}
+
+body.dark .btnDescuento:hover {
+  background-color: #ecc742;
+  color: #f7f7f7;
+}
+
 /*Home Page*/
 /*Contenedor principal*/
 .masterContainer {
