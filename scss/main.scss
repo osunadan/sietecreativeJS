@@ -37,7 +37,7 @@
 
 .btnDescuento {
   background-color: map-get($colores, principal);
-  color: map-get($colores, principal);
+  color: map-get($colores, secundario);
   border-radius: 5px;
   padding: 18px 15px;
   text-align: center;
