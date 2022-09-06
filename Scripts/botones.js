@@ -5,9 +5,12 @@ const videoPlayer4 = document.getElementById("videoPlayer4");
 const videoPlayer5 = document.getElementById("videoPlayer5");
 const videoPlayer6 = document.getElementById("videoPlayer6");
 
+const video1 = document.querySelector("#myVideo1");
+
 function stopVideo() {
   videoPlayer.style.display = "none";
   videoPlayer.click(stop);
+  video1.muted(true);
 }
 
 function stopVideo2() {

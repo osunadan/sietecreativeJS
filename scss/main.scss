@@ -649,7 +649,7 @@
 /* Pagina: Contacto*/
 .masterContainerContacto {
   @include containerPrincipal(max-content, 40px, 1fr);
-  grid-template-rows: 7rem 90rem;
+  grid-template-rows: 7rem 110rem;
   grid-template-areas:
     "nav"
     "formulario";
@@ -671,6 +671,13 @@
 
       .tituloContacto {
         margin: 2rem 0rem;
+      }
+
+      .parrafoContacto {
+        font-weight: map-get($fuentes, parrafo);
+        font-size: 1rem;
+        max-width: 540px;
+        overflow-y: hidden;
       }
     }
   }
@@ -704,6 +711,12 @@
           font-size: 1rem;
         }
       }
+    }
+
+    .radiosContainer {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
     }
   }
 }

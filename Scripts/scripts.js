@@ -95,6 +95,7 @@ for (i = 0; i < btns.length; i++) {
 
 // ----- ----- ----- ----- ----- Boton Dark Mode ----- ----- ----- ----- -----
 // Dentro del evento click, también agregue un condicional para guardar en el localStorage cuando el usuario activo el dark mode o lo desactivo
+
 const btnSwitch = document.querySelector("#switch");
 
 btnSwitch.addEventListener("click", () => {

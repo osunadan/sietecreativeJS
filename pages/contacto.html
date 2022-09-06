@@ -50,49 +50,91 @@
     </nav>
    </div>
   </div>
-  <!--Formulario-->
+  <!--Container del Formulario-->
   <div class="formularioContainer">
    <div class="TituloContactoContainer">
     <h2 class="titulo tituloContacto">¿Tienes algún proyecto en mente?</h2>
-    <p class="parrafo">Contáctanos, elaboraremos una cotización para tu proyecto</p>
+    <p class="parrafoContacto">¡Hola! Este formulario nos permitirá entender un poco más el objetivo de tu proyecto, su
+     alcance,
+     presupuesto y demás para poder enviarte una propuesta acorde a tus necesidades. Tan pronto tengamos tu información
+     estudiaremos la mejor
+     forma de ayudarte y nos contactaremos contigo.</p>
    </div>
    <div class="formularioContainerInterno">
-    <form class="formulario" action="contacto.html" method="post" enctype="application/x-www-form-urlencoded">
+    <!--Aquí empieza el Formulario-->
+    <form class="formulario" id="form">
      <div class="mb-3" id="Item">
-      <label id="labelStyle" for="name" class="form-label">Nombre</label>
-      <input type="text" class="form-control" id="name" aria-describedby="emailHelp">
+      <label id="labelStyle" for="name" class="form-label">¿Cuál es tu nombre?</label>
+      <input type="text" class="form-control" id="name" name="user_name">
      </div>
      <div class="mb-3" id="Item">
-      <label id="labelStyle" for="email" class="form-label">Email de tu compañia:</label>
-      <input type="email" id="email" name="email" class="form-control">
+      <label id="labelStyle" for="email" class="form-label">¿Cuál es tu email?
+      </label>
+      <input type="email" id="email" class="form-control" name="user_email">
+     </div>
+     <!--Tipos de servicios en el formulario-->
+     <div class="mb-3 parrafo" id="Item">¿Que tipo de servicio necesitas?</div>
+     <div class="radiosContainer">
+      <div class="form-check">
+       <input class="form-check-input" type="radio" name="video" id="flexRadioDefault1">
+       <label class="form-check-label" for="flexRadioDefault1">
+        Video
+       </label>
+      </div>
+      <div class="form-check">
+       <input class="form-check-input" type="radio" name="foto" id="flexRadioDefault1">
+       <label class="form-check-label" for="flexRadioDefault1">
+        Fotografia
+       </label>
+      </div>
+      <div class="form-check">
+       <input class="form-check-input" type="radio" name="animacion" id="flexRadioDefault1">
+       <label class="form-check-label" for="flexRadioDefault1">
+        Animación
+       </label>
+      </div>
+      <div class="form-check">
+       <input class="form-check-input" type="radio" name="design" id="flexRadioDefault1">
+       <label class="form-check-label" for="flexRadioDefault1">
+        Diseño
+       </label>
+      </div>
      </div>
      <div class="mb-3" id="Item">
-      <label for="telefono" id="labelStyle" class="form-label">Tu número telefónico:</label>
-      <input type="tel" id="telefono" name="telefono" class="form-control">
+      <label id="labelStyle" for="user_purpose" class="form-label">¿Cuál seria el proposito de tu proyecto?
+      </label>
+      <input type="text" id="user_purpose" class="form-control" name="user_purpose">
+     </div>
+     <div class="mb-3" id="Item">
+      <label id="labelStyle" for="deadline" class="form-label">¿Tienes alguna fecha de entrega definida?
+      </label>
+      <input type="date" id="deadline" class="form-control" name="user_deadline">
+     </div>
+     <div class="mb-3" id="Item">
+      <label id="labelStyle" for="referencia" class=" form-label">¿Tienes alguna referencia o ejemplo en mente de como
+       quieres
+       tu proyecto?
+      </label>
+      <input type="text" id="referencia" class="form-control" name="user_reference">
+     </div>
+     <div class="mb-3" id="Item">
+      <label id="labelStyle" for="descuento" class="form-label">¿Tienes codigo de descuento?
+      </label>
+      <input type="text" id="decuento" name="user_discount" class="form-control">
      </div>
      <div class="mb-3" id="Item">
       <label for="info-adicional" id="labelStyle" class="form-label">Información adicional del proyecto:</label>
       <textarea id="info-adicional" name="message" rows="3" cols="30" class="form-control">
   </textarea>
      </div>
-     <button type="button" class="cta02 btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">
-      Envíar
-     </button>
-     <!-- Modal -->
-     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-       <div class="modal-content">
-        <div class="modal-header">
-         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-         <h5 class="modal-title" id="exampleModalLabel">Muchas gracias</h5>
-         Te enviaremos a tu correo la cotización con la mayor brevedad posible.
-        </div>
-       </div>
-      </div>
-     </div>
+     <!--Boton de envio del formulario-->
+     <input type="submit" class="cta02" id="button" value="Enviar">
     </form>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+    <script type="text/javascript">
+     emailjs.init('RkfGkUUj_CBoRBvjI')
+    </script>
    </div>
   </div>
   <!--Footer -->
@@ -104,8 +146,7 @@
    </div>
   </div>
  </div>
- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js"
-  integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
+ <script src="../Scripts/formToEmail.js"></script>
 </body>
 
 </html>
