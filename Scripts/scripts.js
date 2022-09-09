@@ -129,4 +129,4 @@ setTimeout(() => {
     confirmButtonText: null,
     cancelButtonText: '<i class="fa fa-thumbs-down"></i>',
   });
-}, 2000);
+}, 8000);

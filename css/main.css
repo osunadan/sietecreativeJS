@@ -63,6 +63,7 @@ body.dark .swal2-popup #swal2-html-container {
   width: 8rem;
   font-weight: 100;
   font-size: 12pt;
+  border: 0px;
 }
 
 body.dark .btnDescuento {
@@ -792,13 +793,19 @@ body.dark .portfolioContainer .content-container .tituloVideos, body.dark .portf
   grid-gap: 40px;
   align-content: center;
   justify-content: center;
-  grid-template-rows: 7rem 110rem;
+  grid-template-rows: 7rem 120rem;
   grid-template-areas: "nav" "formulario";
 }
 
 @media all and (max-width: 955px) {
   .masterContainerContacto {
     grid-template-columns: 1fr;
+  }
+}
+
+@media all and (max-width: 425px) {
+  .masterContainerContacto {
+    grid-template-rows: 7rem 133rem;
   }
 }
 
@@ -809,6 +816,7 @@ body.dark .portfolioContainer .content-container .tituloVideos, body.dark .portf
   flex-wrap: nowrap;
   justify-content: none;
   align-content: none;
+  flex-direction: column;
   align-items: center;
   width: 100%;
   height: 100%;
@@ -843,6 +851,7 @@ body.dark .portfolioContainer .content-container .tituloVideos, body.dark .portf
   padding: 1rem 5rem;
   border-radius: 1rem;
   display: flex;
+  flex-direction: column;
 }
 
 @media all and (max-width: 425px) {
@@ -872,6 +881,14 @@ body.dark .portfolioContainer .content-container .tituloVideos, body.dark .portf
 .masterContainerContacto .formularioContainerInterno .formulario #Item #labelStyle {
   font-weight: 400;
   font-size: 1rem;
+}
+
+.masterContainerContacto .formularioContainerInterno .formulario .error {
+  color: red;
+}
+
+.masterContainerContacto .formularioContainerInterno .success {
+  color: green;
 }
 
 .masterContainerContacto .formularioContainerInterno .radiosContainer {
