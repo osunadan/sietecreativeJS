@@ -195,7 +195,7 @@ body.dark #navBarItem {
   }
 }
 
-.containerInterno01 a.cta, .containerInterno01 a.cta:link, .containerInterno01 a.cta:visited {
+.containerInterno01 .cta, .containerInterno01 .cta:link, .containerInterno01 .cta:visited {
   background-color: #ecc742;
   color: #f7f7f7;
   border-radius: 5px;
@@ -208,15 +208,15 @@ body.dark #navBarItem {
   font-weight: 100;
 }
 
-.containerInterno01 a.cta:link {
+.containerInterno01 .cta:link {
   background-color: #ecc742;
 }
 
-.containerInterno01 a.cta:visited {
+.containerInterno01 .cta:visited {
   background-color: #9a7b28;
 }
 
-.containerInterno01 a.cta:hover {
+.containerInterno01 .cta:hover {
   background-color: #f7f7f7;
   color: #ecc742;
   border: 1px solid #ecc042;
@@ -379,14 +379,14 @@ body.dark #navBarItem {
   color: #f7f7f7 !important;
 }
 
-/* Pagina: Nuestro trabajo*/
+/* ------------ Pagina: Nuestro trabajo ----------------*/
 .masterContainerNuestroTrabajo {
   display: grid;
   grid-template-columns: none;
   grid-gap: 0px 40px;
   align-content: center;
   justify-content: center;
-  grid-template-rows: 7rem 35rem 10rem 10rem 60% 12rem 14rem;
+  grid-template-rows: 7rem 35rem 10rem 10rem 65em 12rem 14rem;
   grid-template-areas: "nav" "titulosTrabajos" "botones" "infoServicios" "listaVideos" "barraContacto" "footer";
   align-content: inherit;
 }
@@ -399,12 +399,12 @@ body.dark #navBarItem {
 
 @media all and (max-width: 955px) {
   .masterContainerNuestroTrabajo {
-    grid-template-rows: 7rem 35rem 10rem 70% 12rem 14rem;
-    grid-template-areas: "nav" "titulosTrabajos" "listaVideos" "barraContacto" "footer";
+    grid-template-rows: 7rem 35rem 10rem 10rem 78em 12rem 14rem;
+    grid-template-areas: "nav" "titulosTrabajos" "botones" "infoServicios" "listaVideos" "barraContacto" "footer";
   }
 }
 
-.masterContainerNuestroTrabajo .containerInterno04 {
+.containerInterno04 {
   display: grid;
   grid-template-columns: max-content max-content;
   grid-gap: 30px;
@@ -414,12 +414,12 @@ body.dark #navBarItem {
 }
 
 @media all and (max-width: 955px) {
-  .masterContainerNuestroTrabajo .containerInterno04 {
+  .containerInterno04 {
     grid-template-columns: none;
   }
 }
 
-.masterContainerNuestroTrabajo .masterBoxBotones {
+.masterBoxBotones {
   grid-area: botones;
   display: flex;
   flex-direction: column;
@@ -427,35 +427,73 @@ body.dark #navBarItem {
   align-items: center;
 }
 
-.masterContainerNuestroTrabajo .masterBoxBotones .filterBoxContainer a {
+.masterBoxBotones .filterBoxContainer a {
   margin: 0.5rem;
 }
 
-body.dark .masterContainerNuestroTrabajo .masterBoxBotones .filterBoxContainer a {
+body.dark .masterBoxBotones .filterBoxContainer a {
   color: white;
 }
 
-.masterContainerNuestroTrabajo .masterBoxBotones .filterBoxContainer a:hover {
+.masterBoxBotones .filterBoxContainer a:hover {
   background-color: black;
   color: white;
 }
 
-.masterContainerNuestroTrabajo .infoServiciosContainer {
+.botonContacto {
+  background-color: #ecc042;
+  color: white;
+  border-radius: 10px;
+  padding: 15px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  width: 10rem;
+  font-weight: 100;
+  align-self: center;
+}
+
+.botonContacto:visited {
+  background-color: #ecbf42d7;
+  color: white;
+  border-radius: 10px;
+  padding: 15px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  width: 10rem;
+  font-weight: 100;
+}
+
+.botonContacto:hover {
+  background-color: #060606;
+  color: white;
+  border-radius: 10px;
+  padding: 15px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  width: 10rem;
+  font-weight: 100;
+}
+
+.infoServiciosContainer {
   grid-area: infoServicios;
   justify-self: center;
   display: none;
   flex-direction: column;
   align-content: center;
   justify-content: center;
-  background-color: #bdbdbd;
+  background-color: #f7f7f7;
   border-radius: 1rem;
-  width: 40%;
+  width: 25em;
+  height: 15em;
 }
 
-.masterContainerNuestroTrabajo .infoItem {
+.infoItem {
   width: max-content;
   align-self: center;
-  font-size: 14pt;
+  font-size: 12pt;
   font-family: 700;
 }
 
@@ -493,6 +531,13 @@ body.dark .masterContainerNuestroTrabajo .masterBoxBotones .filterBoxContainer a
 @media all and (max-width: 955px) {
   .portfolioContainer .columna {
     align-items: center;
+    justify-content: space-between;
+  }
+}
+
+@media all and (max-width: 500px) {
+  .portfolioContainer .columna {
+    justify-content: space-around;
   }
 }
 

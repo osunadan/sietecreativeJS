@@ -3,7 +3,7 @@ const btns = document.querySelectorAll(".btn");
 // Acceso a cada una de las fichas se las muestras de trabajo
 const servicios = document.querySelectorAll(".muestraServicios");
 
-// Iteramos por cada boton y cada ficha para que segun el boton que este precionado, muestre las muestras correspondientes
+// Iteramos por cada boton y cada ficha para que segun el boton que este precionado, muestre los materiales correspondientes
 for (i = 0; i < btns.length; i++) {
   btns[i].addEventListener("click", (e) => {
     const filter = e.target.dataset.tipo;
@@ -66,7 +66,8 @@ function creandoInfoServicios(servicio) {
      días</p>
    <p class="precioConIva infoItem"><strong>El precio inicial con IVA seria: </strong>${Math.round(
      servicio.sumaIVA()
-   )}</p>`;
+   )}</p>
+   <a href="contacto.html" class="botonContacto" data-tipo="paginaContacto">Lo quiero</a>`;
 }
 
 // Iteramos para que cada boton muestre la info correspondiente de cada servicio
@@ -130,3 +131,23 @@ setTimeout(() => {
     cancelButtonText: '<i class="fa fa-thumbs-down"></i>',
   });
 }, 8000);
+
+// Con este for of guardo en el session storage el tipo de servicio que el usuario este seleccionando ver con los botones de servicio, así cuando vaya a la pagina de contacto, saldra marcado el radio button con el tipo de servicio que estaba viendo en la pagina Nuestro trabajo
+
+for (i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", (e) => {
+    const filter = e.target.dataset.tipo;
+    if (filter == "video") {
+      sessionStorage.setItem("servicio", "video");
+    }
+    if (filter == "foto") {
+      sessionStorage.setItem("servicio", "foto");
+    }
+    if (filter == "animacion") {
+      sessionStorage.setItem("servicio", "animacion");
+    }
+    if (filter == "diseño") {
+      sessionStorage.setItem("servicio", "diseño");
+    }
+  });
+}

@@ -19,3 +19,15 @@
   justify-content: $just;
   align-content: $align;
 }
+
+@mixin enlace-Boton($colorBG, $colorTexto, $borde, $padding, $ancho) {
+  background-color: $colorBG;
+  color: $colorTexto;
+  border-radius: $borde;
+  padding: $padding;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  width: $ancho;
+  font-weight: map-get($fuentes, parrafo);
+}

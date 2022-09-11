@@ -107,3 +107,15 @@ function emailIsValid(email) {
   let pattern = /\S+@\S+\.\S+/;
   return pattern.test(email);
 }
+
+// --------------- Pre selección del tipo de servicio -------------
+
+if (sessionStorage.getItem("servicio") === "video") {
+  servicioVideoContacto.checked = true;
+} else if (sessionStorage.getItem("servicio") === "foto") {
+  servicioFotoContacto.checked = true;
+} else if (sessionStorage.getItem("servicio") === "animacion") {
+  servicioMotionContacto.checked = true;
+} else if (sessionStorage.getItem("servicio") === "diseño") {
+  servicioDesignContacto.checked = true;
+}

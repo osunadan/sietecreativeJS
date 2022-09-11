@@ -172,7 +172,7 @@
   @include containerPrincipal(inherit, 30px, none);
   grid-area: bienvenida;
 
-  a.cta {
+  .cta {
     background-color: map-get($colores, principal);
     color: map-get($colores, secundario);
     border-radius: 5px;
@@ -185,12 +185,12 @@
     font-weight: map-get($fuentes, parrafo);
 
     &:link {
-      @extend a.cta;
+      @extend .cta;
       background-color: map-get($colores, principal);
     }
 
     &:visited {
-      @extend a.cta;
+      @extend .cta;
       background-color: #9a7b28;
     }
 
@@ -330,69 +330,81 @@
   }
 }
 
-/* Pagina: Nuestro trabajo*/
+/* ------------ Pagina: Nuestro trabajo ----------------*/
 .masterContainerNuestroTrabajo {
   @include containerPrincipal(none, 0px 40px);
   grid: {
-    template-rows: 7rem 35rem 10rem 10rem 60% 12rem 14rem;
+    template-rows: 7rem 35rem 10rem 10rem 65em 12rem 14rem;
     template-areas: "nav" "titulosTrabajos" "botones" "infoServicios"
       "listaVideos" "barraContacto" "footer";
   }
   align-content: inherit;
 
   @media all and (max-width: 955px) {
-    grid-template-rows: 7rem 35rem 10rem 70% 12rem 14rem;
-    grid-template-areas:
-      "nav"
-      "titulosTrabajos"
-      "listaVideos"
-      "barraContacto"
-      "footer";
-  }
-
-  .containerInterno04 {
-    @include containerPrincipal(max-content max-content, 30px, none);
-    grid-area: titulosTrabajos;
-  }
-
-  .masterBoxBotones {
-    grid-area: botones;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    .filterBoxContainer a {
-      margin: 0.5rem;
-
-      body.dark & {
-        color: white;
-      }
+    grid: {
+      template-rows: 7rem 35rem 10rem 10rem 78em 12rem 14rem;
+      template-areas: "nav" "titulosTrabajos" "botones" "infoServicios"
+        "listaVideos" "barraContacto" "footer";
     }
-    .filterBoxContainer a:hover {
-      background-color: black;
+  }
+}
+
+.containerInterno04 {
+  @include containerPrincipal(max-content max-content, 30px, none);
+  grid-area: titulosTrabajos;
+}
+
+.masterBoxBotones {
+  grid-area: botones;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .filterBoxContainer a {
+    margin: 0.5rem;
+
+    body.dark & {
       color: white;
     }
   }
+  .filterBoxContainer a:hover {
+    background-color: black;
+    color: white;
+  }
+}
 
-  .infoServiciosContainer {
-    grid-area: infoServicios;
-    justify-self: center;
-    display: none;
-    flex-direction: column;
-    align-content: center;
-    justify-content: center;
-    background-color: #bdbdbd;
-    border-radius: 1rem;
-    width: 40%;
+.botonContacto {
+  @include enlace-Boton(#ecc042, white, 10px, 15px 20px, 10rem);
+  align-self: center;
+
+  &:visited {
+    @include enlace-Boton(#ecbf42d7, white, 10px, 15px 20px, 10rem);
   }
 
-  .infoItem {
-    width: max-content;
-    align-self: center;
-    font-size: 14pt;
-    font-family: map-get($fuentes, bold);
+  &:hover {
+    @include enlace-Boton(#060606, white, 10px, 15px 20px, 10rem);
   }
+}
+
+.infoServiciosContainer {
+  grid-area: infoServicios;
+  justify-self: center;
+  display: none;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  background-color: #f7f7f7;
+  border-radius: 1rem;
+  width: 25em;
+  height: 15em;
+}
+
+.infoItem {
+  width: max-content;
+  align-self: center;
+  font-size: 12pt;
+  font-family: map-get($fuentes, bold);
 }
 
 .portfolioContainer {
@@ -416,6 +428,11 @@
 
     @media all and (max-width: 955px) {
       align-items: center;
+      justify-content: space-between;
+    }
+
+    @media all and (max-width: 500px) {
+      justify-content: space-around;
     }
   }
 
