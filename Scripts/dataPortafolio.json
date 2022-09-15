@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Video portafolio 1",
+    "type": "Video",
+    "empresa": "Finnovista",
+    "s1": "Portafolio-01.mp4",
+    "s2": "Portafolio-01_02.webm",
+    "enlace": "https://vimeo.com/652272101"
+  },
+  {
+    "s1": "Portafolio-02.mp4",
+    "s2": "Portafolio-02_02.webm",
+    "enlace": "https://vimeo.com/512617334"
+  },
+  {
+    "s1": "Portafolio-03.mp4",
+    "s2": "Portafolio-03_02.webm",
+    "enlace": "https://vimeo.com/464396559"
+  },
+  {
+    "s1": "Portafolio-04.mp4",
+    "s2": "Portafolio-04_02.webm",
+    "enlace": "https://vimeo.com/392820426"
+  },
+  {
+    "s1": "Portafolio-05.mp4",
+    "s2": "Portafolio-05_02.webm",
+    "enlace": "https://vimeo.com/406065456"
+  },
+  {
+    "s1": "Portafolio-06.mp4",
+    "s2": "Portafolio-06_02.webm",
+    "enlace": "https://vimeo.com/343871903"
+  },
+  {
+    "s1": "Portafolio01-01.jpg",
+    "s2": "Portafolio01-02.jpg",
+    "s3": "Portafolio01-03.jpg",
+    "s4": "Portafolio01-04.jpg",
+    "s5": "Portafolio01-05.jpg"
+  }
+]

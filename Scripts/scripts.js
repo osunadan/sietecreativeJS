@@ -130,7 +130,7 @@ setTimeout(() => {
     confirmButtonText: null,
     cancelButtonText: '<i class="fa fa-thumbs-down"></i>',
   });
-}, 8000);
+}, 40000);
 
 // Con este for of guardo en el session storage el tipo de servicio que el usuario este seleccionando ver con los botones de servicio, así cuando vaya a la pagina de contacto, saldra marcado el radio button con el tipo de servicio que estaba viendo en la pagina Nuestro trabajo
 

@@ -521,9 +521,9 @@ body.dark .masterBoxBotones .filterBoxContainer a {
 .portfolioContainer .columna {
   display: flex;
   flex-direction: none;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-content: none;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-content: center;
   flex-basis: 74em;
   min-width: 250px;
 }
@@ -549,9 +549,8 @@ body.dark .masterBoxBotones .filterBoxContainer a {
   align-content: center;
   align-items: center;
   margin: 20px 0;
-  border-radius: 15px;
   overflow: hidden;
-  width: 30%;
+  width: 15em;
   height: fit-content;
 }
 
@@ -568,10 +567,10 @@ body.dark .masterBoxBotones .filterBoxContainer a {
 }
 
 .portfolioContainer .content-container .tituloVideos, .portfolioContainer .content-container .subtituloVideos {
-  font-weight: 400;
-  font-size: 18pt;
+  font-weight: 700;
+  font-size: 14pt;
   margin: 10px 10px;
-  align-self: flex-start;
+  align-self: center;
 }
 
 body.dark .portfolioContainer .content-container .tituloVideos, body.dark .portfolioContainer .content-container .subtituloVideos {
@@ -586,20 +585,23 @@ body.dark .portfolioContainer .content-container .tituloVideos, body.dark .portf
 
 .portfolioContainer .content-container .subtituloVideos {
   font-weight: 100;
-  font-size: 16pt;
+  font-size: 12pt;
 }
 
 .portfolioContainer .small-img {
   position: relative;
-  border-radius: 15px;
-  width: 14rem;
+  width: 15em;
+  height: 15em;
 }
 
 .portfolioContainer .imagenPreview {
-  width: 300px;
+  position: absolute;
+  right: -83px;
+  top: -12px;
+  width: 28em;
 }
 
-.play-btn, .video-player, .video-player2, .video-player3, .video-player4, .video-player5, .video-player6 {
+.play-btn {
   width: 70px;
   position: absolute;
   left: 50%;
@@ -614,6 +616,7 @@ body.dark .portfolioContainer .content-container .tituloVideos, body.dark .portf
   right: 10px;
   width: 70px;
   cursor: pointer;
+  z-index: 100;
 }
 
 @media all and (max-width: 955px) {
@@ -622,25 +625,32 @@ body.dark .portfolioContainer .content-container .tituloVideos, body.dark .portf
   }
 }
 
-.video-player, .video-player2, .video-player3, .video-player4, .video-player5, .video-player6 {
-  width: 60%;
-  cursor: pointer;
-  display: none;
+.video-player, .photoGallery {
   position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  display: none;
   z-index: 101;
 }
 
 @media all and (max-width: 955px) {
-  .video-player, .video-player2, .video-player3, .video-player4, .video-player5, .video-player6 {
+  .video-player, .photoGallery {
     width: 94%;
   }
 }
 
 @media all and (max-height: 600px) {
-  .video-player, .video-player2, .video-player3, .video-player4, .video-player5, .video-player6 {
+  .video-player, .photoGallery {
     width: 70%;
     top: 255px;
   }
+}
+
+.photoGallery {
+  width: 30%;
+  transition: 0.8s ease all;
 }
 
 /* Pagina: Resultados*/
