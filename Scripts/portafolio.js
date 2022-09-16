@@ -1,3 +1,5 @@
+// ---------------- Variables ----------------
+/* En las siguientes variables guardo el acceso a los elementos del DOM que se necesitan para ejecutar el codigo */
 const videoPlayer = document.getElementById("videoPlayer");
 const gallery = document.getElementById("photoGallery");
 const BG = document.getElementById("BG");
@@ -6,6 +8,8 @@ const videoTag = document.getElementById("myVideo");
 const botonPlay = document.querySelectorAll(".play-btn");
 const botonStop = document.querySelectorAll(".close-btn");
 
+// ---------------- Boton de cierre ----------------
+/* For of que itera sobre el boton de cierre del video player y de la galeria de imagenes para agregarles un evento click */
 for (i = 0; i < botonStop.length; i++) {
   botonStop[i].addEventListener("click", (e) => {
     const cierre = e.target.dataset.cierre;
@@ -22,12 +26,16 @@ for (i = 0; i < botonStop.length; i++) {
   });
 }
 
+// ---------------- Importando data de JSON ----------------
+/* Utilizo Fecth para traerme data necesaria para la construcción del HTML de caada material del portafolio, retornando una variable que tiene como valor esa data */
 fetch("/Scripts/dataPortafolio.json")
   .then((res) => res.json())
   .then((data) => {
     return (sourceMateriales = data);
   });
 
+// ---------------- Construyendo el HTML----------------
+/* Con las siguientes 3 funciones se crea el HTML correspondiente para cada tipo de material en el portafolio */
 function agregandoSourceVideos(source) {
   videoTag.innerHTML = `
    <source id="source01" src="../media/Video-${source.s1}" type="video/mp4">
@@ -64,6 +72,8 @@ function agregandoSourceDesign(source) {
      </div>`;
 }
 
+// ---------------- Limpiando HTML ----------------
+/* Las siguientes funciones son para dejar sin elementos a los elementos contenedores del video player y la galeria de imagenes una vez que se da click en el boton de cierre del video player o la galeria */
 function clearVideoTag() {
   videoTag.innerHTML = "";
 }
@@ -72,6 +82,8 @@ const clearCarouselTag = () => {
   carousel.innerHTML = "";
 };
 
+// ---------------- Visualización del portafolio----------------
+/* Con el siguiente For of y los condicionales, se ejecutan las funciones que le agregan al video player y la galeria, el material de portafolio correspondiente a mostrar */
 for (i = 0; i < botonPlay.length; i++) {
   botonPlay[i].addEventListener("click", (e) => {
     const material = e.target.dataset.material;
