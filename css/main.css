@@ -386,7 +386,7 @@ body.dark #navBarItem {
   grid-gap: 0px 40px;
   align-content: center;
   justify-content: center;
-  grid-template-rows: 7rem 35rem 10rem 10rem 65em 12rem 14rem;
+  grid-template-rows: 7rem 35rem 10rem 10rem 87em 12rem 14rem;
   grid-template-areas: "nav" "titulosTrabajos" "botones" "infoServicios" "listaVideos" "barraContacto" "footer";
   align-content: inherit;
 }
@@ -399,7 +399,7 @@ body.dark #navBarItem {
 
 @media all and (max-width: 955px) {
   .masterContainerNuestroTrabajo {
-    grid-template-rows: 7rem 35rem 10rem 10rem 78em 12rem 14rem;
+    grid-template-rows: 7rem 35rem 10rem 10rem 105em 12rem 14rem;
     grid-template-areas: "nav" "titulosTrabajos" "botones" "infoServicios" "listaVideos" "barraContacto" "footer";
   }
 }
@@ -498,7 +498,8 @@ body.dark .masterBoxBotones .filterBoxContainer a {
 }
 
 .portfolioContainer {
-  width: 80%;
+  width: 98%;
+  height: 98em;
   margin: 80px auto;
   grid-area: listaVideos;
 }
@@ -521,17 +522,23 @@ body.dark .masterBoxBotones .filterBoxContainer a {
 .portfolioContainer .columna {
   display: flex;
   flex-direction: none;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   justify-content: center;
   align-content: center;
-  flex-basis: 74em;
+  flex-basis: %;
   min-width: 250px;
+}
+
+@media all and (max-width: 1440px) {
+  .portfolioContainer .columna {
+    flex-basis: 90%;
+    align-items: center;
+  }
 }
 
 @media all and (max-width: 955px) {
   .portfolioContainer .columna {
     align-items: center;
-    justify-content: space-between;
   }
 }
 
@@ -550,7 +557,7 @@ body.dark .masterBoxBotones .filterBoxContainer a {
   align-items: center;
   margin: 20px 0;
   overflow: hidden;
-  width: 15em;
+  width: 17em;
   height: fit-content;
 }
 
@@ -632,7 +639,7 @@ body.dark .portfolioContainer .content-container .tituloVideos, body.dark .portf
   transform: translate(-50%, -50%);
   width: 60%;
   display: none;
-  z-index: 101;
+  z-index: 102;
 }
 
 @media all and (max-width: 955px) {
@@ -648,9 +655,31 @@ body.dark .portfolioContainer .content-container .tituloVideos, body.dark .portf
   }
 }
 
+.darkBG {
+  background-color: rgba(0, 0, 0, 0.85);
+  width: 100vw;
+  height: 190vh;
+  z-index: 101;
+}
+
+@media all and (max-width: 955px) {
+  .darkBG {
+    height: 380vh;
+  }
+}
+
 .photoGallery {
+  top: 55%;
   width: 30%;
   transition: 0.8s ease all;
+  z-index: 102;
+}
+
+@media all and (max-width: 955px) {
+  .photoGallery {
+    width: 25em;
+    top: 57%;
+  }
 }
 
 /* Pagina: Resultados*/

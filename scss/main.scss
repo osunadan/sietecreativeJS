@@ -334,7 +334,7 @@
 .masterContainerNuestroTrabajo {
   @include containerPrincipal(none, 0px 40px);
   grid: {
-    template-rows: 7rem 35rem 10rem 10rem 65em 12rem 14rem;
+    template-rows: 7rem 35rem 10rem 10rem 87em 12rem 14rem;
     template-areas: "nav" "titulosTrabajos" "botones" "infoServicios"
       "listaVideos" "barraContacto" "footer";
   }
@@ -342,7 +342,7 @@
 
   @media all and (max-width: 955px) {
     grid: {
-      template-rows: 7rem 35rem 10rem 10rem 78em 12rem 14rem;
+      template-rows: 7rem 35rem 10rem 10rem 105em 12rem 14rem;
       template-areas: "nav" "titulosTrabajos" "botones" "infoServicios"
         "listaVideos" "barraContacto" "footer";
     }
@@ -408,7 +408,8 @@
 }
 
 .portfolioContainer {
-  width: 80%;
+  width: 98%;
+  height: 98em;
   margin: 80px auto;
   grid-area: listaVideos;
 
@@ -422,13 +423,17 @@
   }
 
   .columna {
-    @include flex(none, nowrap, center, center);
-    flex-basis: 74em;
+    @include flex(none, wrap, center, center);
+    flex-basis: %;
     min-width: 250px;
+
+    @media all and (max-width: 1440px) {
+      flex-basis: 90%;
+      align-items: center;
+    }
 
     @media all and (max-width: 955px) {
       align-items: center;
-      justify-content: space-between;
     }
 
     @media all and (max-width: 500px) {
@@ -441,7 +446,7 @@
     align-items: center;
     margin: 20px 0;
     overflow: hidden;
-    width: 15em;
+    width: 17em;
     height: fit-content;
 
     @media all and (max-width: 955px) {
@@ -517,7 +522,7 @@
   transform: translate(-50%, -50%);
   width: 60%;
   display: none;
-  z-index: 101;
+  z-index: 102;
 
   @media all and (max-width: 955px) {
     width: 94%;
@@ -529,10 +534,28 @@
   }
 }
 
+.darkBG {
+  background-color: rgba(#000000, 0.85);
+  width: 100vw;
+  height: 190vh;
+  z-index: 101;
+
+  @media all and (max-width: 955px) {
+    height: 380vh;
+  }
+}
+
 .photoGallery {
   @extend .video-player;
+  top: 55%;
   width: 30%;
   transition: 0.8s ease all;
+  z-index: 102;
+
+  @media all and (max-width: 955px) {
+    width: 25em;
+    top: 57%;
+  }
 }
 
 /* Pagina: Resultados*/
