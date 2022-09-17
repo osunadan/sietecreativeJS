@@ -94,7 +94,7 @@ body.dark .btnDescuento:hover {
   color: #f7f7f7;
 }
 
-/*Home Page*/
+/* ----------------- Home Page -----------------------*/
 /*Contenedor principal*/
 .masterContainer {
   display: grid;
@@ -128,6 +128,26 @@ body.dark #NavbarB {
   background-color: #060606;
 }
 
+#NavbarB #contenedorInternoNavBar {
+  justify-content: flex-end;
+}
+
+#NavbarB #contenedorInternoNavBar #navbar-brand {
+  flex-basis: 27em;
+}
+
+@media all and (max-width: 500px) {
+  #NavbarB #contenedorInternoNavBar #navbar-brand {
+    flex-basis: 10em;
+  }
+}
+
+@media all and (min-width: 1024px) {
+  #NavbarB #contenedorInternoNavBar #navbar-brand {
+    flex-basis: 4.5em;
+  }
+}
+
 #NavbarB .navbar-toggler {
   border: transparent;
 }
@@ -138,7 +158,7 @@ body.dark #NavbarB {
   height: 1.8em;
 }
 
-body.dark #navBarItem {
+body.dark #NavbarB #navBarItem {
   color: white;
 }
 
@@ -379,14 +399,14 @@ body.dark #navBarItem {
   color: #f7f7f7 !important;
 }
 
-/* ------------ Pagina: Nuestro trabajo ----------------*/
+/* ------------ ------------- Pagina: Nuestro trabajo ----------------*/
 .masterContainerNuestroTrabajo {
   display: grid;
   grid-template-columns: none;
   grid-gap: 0px 40px;
   align-content: center;
   justify-content: center;
-  grid-template-rows: 7rem 35rem 10rem 10rem 87em 12rem 14rem;
+  grid-template-rows: 7rem 35rem 10rem 15rem 87em 12rem 14rem;
   grid-template-areas: "nav" "titulosTrabajos" "botones" "infoServicios" "listaVideos" "barraContacto" "footer";
   align-content: inherit;
 }
@@ -399,7 +419,7 @@ body.dark #navBarItem {
 
 @media all and (max-width: 955px) {
   .masterContainerNuestroTrabajo {
-    grid-template-rows: 7rem 35rem 10rem 10rem 105em 12rem 14rem;
+    grid-template-rows: 7rem 35rem 10rem 15rem 105em 12rem 14rem;
     grid-template-areas: "nav" "titulosTrabajos" "botones" "infoServicios" "listaVideos" "barraContacto" "footer";
   }
 }
@@ -525,13 +545,13 @@ body.dark .masterBoxBotones .filterBoxContainer a {
   flex-wrap: wrap;
   justify-content: center;
   align-content: center;
-  flex-basis: %;
+  flex-basis: 108em;
   min-width: 250px;
 }
 
 @media all and (max-width: 1440px) {
   .portfolioContainer .columna {
-    flex-basis: 90%;
+    flex-basis: 90em;
     align-items: center;
   }
 }
@@ -682,7 +702,7 @@ body.dark .portfolioContainer .content-container .tituloVideos, body.dark .portf
   }
 }
 
-/* Pagina: Resultados*/
+/* ---------------------- Pagina: Resultados ----------------------------*/
 .masterContainerResultados {
   display: grid;
   grid-template-columns: max-content max-content;
@@ -821,7 +841,7 @@ body.dark .portfolioContainer .content-container .tituloVideos, body.dark .portf
   align-items: center;
 }
 
-/* Pagina: Quienes somos*/
+/* -------------------------- Pagina: Quienes somos ---------------------------*/
 .masterContainerQuienesSomos {
   display: grid;
   grid-template-columns: 22rem max-content;
@@ -870,7 +890,7 @@ body.dark .portfolioContainer .content-container .tituloVideos, body.dark .portf
   border-radius: 20px;
 }
 
-/* Pagina: Contacto*/
+/* ------------------------- Pagina: Contacto --------------------------*/
 .masterContainerContacto {
   display: grid;
   grid-template-columns: max-content;
@@ -971,10 +991,6 @@ body.dark .portfolioContainer .content-container .tituloVideos, body.dark .portf
   color: red;
 }
 
-.masterContainerContacto .formularioContainerInterno .success {
-  color: green;
-}
-
 .masterContainerContacto .formularioContainerInterno .radiosContainer {
   display: flex;
   flex-wrap: wrap;
@@ -1029,7 +1045,7 @@ body.dark .portfolioContainer .content-container .tituloVideos, body.dark .portf
   }
 }
 
-/* Estilos generales*/
+/* -------------------- Estilos generales -------------------------- */
 .titulo {
   font-weight: 400;
   font-size: 24pt;

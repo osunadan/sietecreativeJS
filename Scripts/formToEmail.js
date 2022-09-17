@@ -14,20 +14,21 @@ const user_deadline = document.querySelector("#user_deadline");
 const user_reference = document.querySelector("#user_reference");
 const user_discount = document.querySelector("#user_discount");
 let errorBucket = [];
-// Evento con el que validamos el formulario, al cual le agregue las condiciones que permitiran el envio
+
+// Evento con el que validamos el formulario, al cual le agregue las condiciones que permitirán el envió
 formContact.addEventListener("submit", (e) => {
   errorBucket.length = 0;
   clearMessages();
   // Validación de nombre
   if (user_name.value < 1) {
     e.preventDefault();
-    error[0].innerHTML = "El nombre es requerido";
+    error[0].innerHTML = "Este campo es requerido";
     errorBucket.push("Error 1");
   }
   // Validación de email
   if (!emailIsValid(user_email.value)) {
     e.preventDefault();
-    error[1].innerHTML = "Dirección de email invalida";
+    error[1].innerHTML = "Dirección de email inválida";
     errorBucket.push("Error 2");
   }
   // Validación de tipo de servicio
@@ -52,7 +53,7 @@ formContact.addEventListener("submit", (e) => {
   // Validación de la fecha de entrega del proyecto
   if (user_deadline.value === "") {
     e.preventDefault();
-    error[4].innerHTML = "Escogue una fecha valida";
+    error[4].innerHTML = "Escoge una fecha válida";
     errorBucket.push("Error 5");
   }
 
@@ -66,11 +67,11 @@ formContact.addEventListener("submit", (e) => {
   // Validación de codigo de descuento
   if (user_discount.value != "MIPRIMERSERVICIO") {
     e.preventDefault();
-    error[6].innerHTML = "Este no es un codigo de descuento valido";
+    error[6].innerHTML = "Este no es un código de descuento válido";
     errorBucket.push("Error 7");
   }
 
-  // Envio de la info a la API
+  // ------------------------ Envio de la info a la API -------------------
 
   if (errorBucket.length === 0) {
     e.preventDefault();

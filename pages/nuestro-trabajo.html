@@ -10,9 +10,10 @@
  <link rel="stylesheet" href="https://use.typekit.net/rxb5wgu.css">
  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
   integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-
- <link rel="stylesheet" href="sweetalert2.min.css">
- <script src="../Scripts/scripts.js" defer></script>
+ <script src="../Scripts/infoServicios.js" defer></script>
+ <script src="../scripts/portafolio.js" defer></script>
+ <script src="../scripts/alertaDescuento.js" defer></script>
+ <script src="../scripts/darkMode.js" defer></script>
  <link rel="stylesheet" type="text/css" href="../css/main.css">
 </head>
 
@@ -23,9 +24,11 @@
    <div class="container-xl">
     <nav id="contenedorNavB" class="navbar navbar-expand-lg">
      <div id="contenedorInternoNavBar" class="container-fluid row">
-      <a class="navbar-brand col-4 col-sm-2" href="../index.html">
+      <a id="navbar-brand" class="navbar-brand col-4 col-sm-2" href="../index.html">
        <img src="../images/logo.png" alt="Logo de Siete Creative Studio" width="80">
       </a>
+      <!------------- Boton Dark Mode ------------------->
+      <button class="switch" id="switch"></button>
       <button class="navbar-toggler col-2 col-sm-1" type="button" data-bs-toggle="collapse"
        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
        aria-label="Toggle navigation">
@@ -49,8 +52,6 @@
          <a id="navBarItem" class="nav-link" href="contacto.html">Contacto</a>
         </li>
        </ul>
-       <button class="switch" id="switch">
-       </button>
       </div>
      </div>
     </nav>
@@ -74,7 +75,7 @@
    <div class="filterBoxContainer" id="filterBox">
     <a href="#" class="btn" data-tipo="all">Todos</a>
     <a href="#" class="btn" data-tipo="video">Video</a>
-    <a href="#" class="btn" data-tipo="foto">Fotografia</a>
+    <a href="#" class="btn" data-tipo="foto">Fotografía</a>
     <a href="#" class="btn" data-tipo="animacion">Animación</a>
     <a href="#" class="btn" data-tipo="diseño">Diseño</a>
     <p class="parrafo"></p>
@@ -102,8 +103,7 @@
        <img src="../media/Icon-play.svg" alt="" class="play-btn" data-material="Video02">
       </div>
       <p class="tituloVideos"> Collective Talks</p>
-      <p class="subtituloVideos"> Video recap de la primera temporada del podcast Collective Talks para Collective
-       Academy</p>
+      <p class="subtituloVideos"> Video recap de la primera temporada del podcast Collective Talks</p>
      </div>
      <!--Ficha 03-->
      <div class="content-container muestraServicios video">
@@ -121,8 +121,7 @@
        <img src="../media/Icon-play.svg" alt="" class="play-btn" data-material="Video04">
       </div>
       <p class="tituloVideos">Transferencias a cualquier banco</p>
-      <p class="subtituloVideos">Explainer video para Mibo como parte de su campaña de tutoriales, donde explican las
-       funcionalidades de su app</p>
+      <p class="subtituloVideos">Explainer video para Mibo como parte de su campaña de tutoriales</p>
      </div>
      <!--Ficha 05-->
      <div class="content-container muestraServicios video">
@@ -149,7 +148,7 @@
        <img src="../media/image-play.svg" alt="" class="play-btn" data-material="Gallery1">
       </div>
       <p class=" tituloVideos">Pull & Bear</p>
-      <p class="subtituloVideos">Sesion de fotos editorial para campaña de redes sociales</p>
+      <p class="subtituloVideos">Sesión de fotos editorial para campaña de redes sociales</p>
      </div>
      <!--Ficha 08-->
      <div class="content-container muestraServicios foto">
@@ -158,7 +157,7 @@
        <img src="../media/image-play.svg" alt="" class="play-btn" data-material="Gallery2">
       </div>
       <p class=" tituloVideos">H&M</p>
-      <p class="subtituloVideos">Sesion de fotos editorial para campaña de redes sociales</p>
+      <p class="subtituloVideos">Sesión de fotos editorial para campaña de redes sociales</p>
      </div>
      <!--Ficha 09-->
      <div class="content-container muestraServicios diseño">
@@ -167,7 +166,7 @@
        <img src="../media/image-play.svg" alt="" class="play-btn" data-material="Design2">
       </div>
       <p class=" tituloVideos">Diseño UI</p>
-      <p class="subtituloVideos">Este es un Mockup solamente como referencia con propositos educativos</p>
+      <p class="subtituloVideos">Este es un Mockup solamente como referencia con propósitos educativos</p>
      </div>
      <!--Ficha 10-->
      <div class="content-container muestraServicios diseño">
@@ -176,7 +175,7 @@
        <img src="../media/image-play.svg" alt="" class="play-btn" data-material="Design1">
       </div>
       <p class=" tituloVideos">Diseño UI</p>
-      <p class="subtituloVideos">Este es un Mockup solamente como referencia con propositos educativos</p>
+      <p class="subtituloVideos">Este es un Mockup solamente como referencia con propósitos educativos</p>
      </div>
     </div>
    </div>
@@ -189,6 +188,7 @@
    <img src="../media/Icon-close.svg" alt="" class="close-btn" data-cierre="cierre1">
   </div>
   <!--------- Galeria de imagenes---------->
+  <!-- Background-->
   <div id="BG"></div>
   <div class="photoGallery" id="photoGallery">
    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
@@ -233,7 +233,6 @@
  </div>
  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js"
   integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
- <script src="../scripts/portafolio.js"></script>
  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 

@@ -80,7 +80,7 @@
   }
 }
 
-/*Home Page*/
+/* ----------------- Home Page -----------------------*/
 /*Contenedor principal*/
 .masterContainer {
   @include containerPrincipal(max-content max-content, 0px 40px);
@@ -113,6 +113,20 @@
     background-color: map-get($colores, terciario);
   }
 
+  #contenedorInternoNavBar {
+    justify-content: flex-end;
+
+    #navbar-brand {
+      flex-basis: 27em;
+      @media all and (max-width: 500px) {
+        flex-basis: 10em;
+      }
+      @media all and (min-width: 1024px) {
+        flex-basis: 4.5em;
+      }
+    }
+  }
+
   .navbar-toggler {
     border: transparent;
 
@@ -122,13 +136,14 @@
       height: 1.8em;
     }
   }
-}
 
-#navBarItem {
-  body.dark & {
-    color: white;
+  #navBarItem {
+    body.dark & {
+      color: white;
+    }
   }
 }
+
 // ----- ----- ----- ----- ----- Boton Dark Mode ----- ----- ----- ----- -----
 .switch {
   width: 4rem;
@@ -330,11 +345,11 @@
   }
 }
 
-/* ------------ Pagina: Nuestro trabajo ----------------*/
+/* ------------ ------------- Pagina: Nuestro trabajo ----------------*/
 .masterContainerNuestroTrabajo {
   @include containerPrincipal(none, 0px 40px);
   grid: {
-    template-rows: 7rem 35rem 10rem 10rem 87em 12rem 14rem;
+    template-rows: 7rem 35rem 10rem 15rem 87em 12rem 14rem;
     template-areas: "nav" "titulosTrabajos" "botones" "infoServicios"
       "listaVideos" "barraContacto" "footer";
   }
@@ -342,7 +357,7 @@
 
   @media all and (max-width: 955px) {
     grid: {
-      template-rows: 7rem 35rem 10rem 10rem 105em 12rem 14rem;
+      template-rows: 7rem 35rem 10rem 15rem 105em 12rem 14rem;
       template-areas: "nav" "titulosTrabajos" "botones" "infoServicios"
         "listaVideos" "barraContacto" "footer";
     }
@@ -424,11 +439,11 @@
 
   .columna {
     @include flex(none, wrap, center, center);
-    flex-basis: %;
+    flex-basis: 108em;
     min-width: 250px;
 
     @media all and (max-width: 1440px) {
-      flex-basis: 90%;
+      flex-basis: 90em;
       align-items: center;
     }
 
@@ -558,7 +573,7 @@
   }
 }
 
-/* Pagina: Resultados*/
+/* ---------------------- Pagina: Resultados ----------------------------*/
 .masterContainerResultados {
   @include containerPrincipal(max-content max-content, 0px 40px, 1fr);
   grid-template-rows: 7rem 38rem 65rem 65rem 12rem max-content;
@@ -646,7 +661,7 @@
     }
   }
 }
-/* Pagina: Quienes somos*/
+/* -------------------------- Pagina: Quienes somos ---------------------------*/
 .masterContainerQuienesSomos {
   @include containerPrincipal(22rem max-content, 0px 0px);
   grid-template-rows: 7rem 60rem 12rem max-content;
@@ -677,7 +692,7 @@
   }
 }
 
-/* Pagina: Contacto*/
+/* ------------------------- Pagina: Contacto --------------------------*/
 .masterContainerContacto {
   @include containerPrincipal(max-content, 40px, 1fr);
   grid-template-rows: 7rem 120rem;
@@ -753,10 +768,6 @@
       }
     }
 
-    .success {
-      color: green;
-    }
-
     .radiosContainer {
       display: flex;
       flex-wrap: wrap;
@@ -806,7 +817,7 @@
   }
 }
 
-/* Estilos generales*/
+/* -------------------- Estilos generales -------------------------- */
 .titulo {
   font-weight: map-get($fuentes, titulo);
   font-size: 24pt;
