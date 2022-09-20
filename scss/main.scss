@@ -519,9 +519,9 @@
 
 .close-btn {
   position: absolute;
-  top: 10px;
+  top: 15px;
   right: 10px;
-  width: 70px;
+  width: 50px;
   cursor: pointer;
   z-index: 100;
 
@@ -552,7 +552,7 @@
 .darkBG {
   background-color: rgba(#000000, 0.85);
   width: 100vw;
-  height: 190vh;
+  height: 225vh;
   z-index: 101;
 
   @media all and (max-width: 955px) {
@@ -563,12 +563,16 @@
 .photoGallery {
   @extend .video-player;
   top: 55%;
-  width: 30%;
+  width: 60%;
   transition: 0.8s ease all;
   z-index: 102;
 
+  @media all and (min-width: 1440px) {
+    width: 45em;
+  }
+
   @media all and (max-width: 955px) {
-    width: 25em;
+    width: 27em;
     top: 57%;
   }
 }

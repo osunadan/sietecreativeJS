@@ -74,9 +74,9 @@ function agregandoSourceDesign(source) {
 
 // ---------------- Limpiando HTML ----------------
 /* Las siguientes funciones son para dejar sin elementos a los elementos contenedores del video player y la galería de imágenes una vez que se da click en el botón de cierre del video player o la galería */
-function clearVideoTag() {
+const clearVideoTag = () => {
   videoTag.innerHTML = "";
-}
+};
 
 const clearCarouselTag = () => {
   carousel.innerHTML = "";

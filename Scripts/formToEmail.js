@@ -75,12 +75,9 @@ formContact.addEventListener("submit", (e) => {
 
   if (errorBucket.length === 0) {
     e.preventDefault();
-
     btn.value = "Enviando...";
-
     const serviceID = "service_vp2f6rg";
     const templateID = "template_nj5h474";
-
     emailjs.sendForm(serviceID, templateID, "#form").then(
       () => {
         btn.value = "Enviar";
@@ -97,17 +94,18 @@ formContact.addEventListener("submit", (e) => {
 });
 
 // --------- Funciones para la validación ----------
+
 // Función que barre con los mensajes de error en caso de que se rellenen correctamente
-function clearMessages() {
+const clearMessages = () => {
   for (let i = 0; i < error.length; i++) {
     error[i].innerText = "";
   }
-}
+};
 // Función que valida el email
-function emailIsValid(email) {
+const emailIsValid = (email) => {
   let pattern = /\S+@\S+\.\S+/;
   return pattern.test(email);
-}
+};
 
 // --------------- Pre selección del tipo de servicio -------------
 

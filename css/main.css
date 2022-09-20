@@ -639,9 +639,9 @@ body.dark .portfolioContainer .content-container .tituloVideos, body.dark .portf
 
 .close-btn {
   position: absolute;
-  top: 10px;
+  top: 15px;
   right: 10px;
-  width: 70px;
+  width: 50px;
   cursor: pointer;
   z-index: 100;
 }
@@ -678,7 +678,7 @@ body.dark .portfolioContainer .content-container .tituloVideos, body.dark .portf
 .darkBG {
   background-color: rgba(0, 0, 0, 0.85);
   width: 100vw;
-  height: 190vh;
+  height: 225vh;
   z-index: 101;
 }
 
@@ -690,14 +690,20 @@ body.dark .portfolioContainer .content-container .tituloVideos, body.dark .portf
 
 .photoGallery {
   top: 55%;
-  width: 30%;
+  width: 60%;
   transition: 0.8s ease all;
   z-index: 102;
 }
 
+@media all and (min-width: 1440px) {
+  .photoGallery {
+    width: 45em;
+  }
+}
+
 @media all and (max-width: 955px) {
   .photoGallery {
-    width: 25em;
+    width: 27em;
     top: 57%;
   }
 }

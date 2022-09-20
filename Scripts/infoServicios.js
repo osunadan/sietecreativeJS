@@ -57,7 +57,7 @@ let diseño = serviciosInfo.find((servicio) => servicio.nombre === "diseño");
 const contenedorParrafo = document.querySelector(".infoServiciosContainer");
 
 // Declaro una función con la que agregaré el código HTML + el texto que cada servicio
-function creandoInfoServicios(servicio) {
+const creandoInfoServicios = (servicio) => {
   contenedorParrafo.innerHTML = `<p class="precioEstimado infoItem"><strong>Precio a partir de: </strong> ${
     servicio.precioEstimado
   } mxn</p>
@@ -68,7 +68,7 @@ function creandoInfoServicios(servicio) {
      servicio.sumaIVA()
    )}</p>
    <a href="contacto.html" class="botonContacto" data-tipo="paginaContacto">Lo quiero</a>`;
-}
+};
 
 // Iteramos para que cada botón muestre la info correspondiente de cada servicio
 for (i = 0; i < btns.length; i++) {
@@ -99,17 +99,9 @@ for (i = 0; i < btns.length; i++) {
 for (i = 0; i < btns.length; i++) {
   btns[i].addEventListener("click", (e) => {
     const filter = e.target.dataset.tipo;
-    if (filter == "video") {
-      sessionStorage.setItem("servicio", "video");
-    }
-    if (filter == "foto") {
-      sessionStorage.setItem("servicio", "foto");
-    }
-    if (filter == "animacion") {
-      sessionStorage.setItem("servicio", "animacion");
-    }
-    if (filter == "diseño") {
-      sessionStorage.setItem("servicio", "diseño");
-    }
+    filter == "video" && sessionStorage.setItem("servicio", "video");
+    filter == "foto" && sessionStorage.setItem("servicio", "foto");
+    filter == "animacion" && sessionStorage.setItem("servicio", "animacion");
+    filter == "diseño" && sessionStorage.setItem("servicio", "diseño");
   });
 }

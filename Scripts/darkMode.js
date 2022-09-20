@@ -13,9 +13,8 @@ btnSwitch.addEventListener("click", () => {
   }
 });
 
-// Con este condicional el navegador mostrara el ultimo modo escogido por el usuario
-if (localStorage.getItem("dark-mode") === "true") {
-  document.body.classList.add("dark");
-} else {
-  document.body.classList.remove("dark");
-}
+// Con este operador ternario el navegador mostrara el ultimo modo escogido por el usuario
+
+localStorage.getItem("dark-mode") === "true"
+  ? document.body.classList.add("dark")
+  : document.body.classList.remove("dark");
