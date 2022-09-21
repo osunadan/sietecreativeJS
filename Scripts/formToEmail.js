@@ -65,7 +65,7 @@ formContact.addEventListener("submit", (e) => {
   }
 
   // Validación de codigo de descuento
-  if (user_discount.value != "MIPRIMERSERVICIO") {
+  if (user_discount.value != "MIPRIMERSERVICIO" && user_discount.value != "") {
     e.preventDefault();
     error[6].innerHTML = "Este no es un código de descuento válido";
     errorBucket.push("Error 7");
