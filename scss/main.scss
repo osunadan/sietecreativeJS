@@ -549,17 +549,6 @@
   }
 }
 
-.darkBG {
-  background-color: rgba(#000000, 0.85);
-  width: 100vw;
-  height: 225vh;
-  z-index: 101;
-
-  @media all and (max-width: 955px) {
-    height: 380vh;
-  }
-}
-
 .photoGallery {
   @extend .video-player;
   top: 55%;

@@ -675,19 +675,6 @@ body.dark .portfolioContainer .content-container .tituloVideos, body.dark .portf
   }
 }
 
-.darkBG {
-  background-color: rgba(0, 0, 0, 0.85);
-  width: 100vw;
-  height: 225vh;
-  z-index: 101;
-}
-
-@media all and (max-width: 955px) {
-  .darkBG {
-    height: 380vh;
-  }
-}
-
 .photoGallery {
   top: 55%;
   width: 60%;
