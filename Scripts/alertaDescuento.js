@@ -8,7 +8,7 @@ sessionStorage.getItem("Descuento") === "true"
       Swal.fire({
         title:
           "<strong>Obtén un 5% de descuento en tu primera contratación</strong>",
-        html: "<p>Utiliza el cupón:</p><p>MIPRIMERSERVICIO</p><a class='btnDescuento' href='../pages/contacto.html' href='/pages/contacto.html'>¡Lo quiero!</a>",
+        html: "<p>Utiliza el cupón:</p><p>MIPRIMERSERVICIO</p><a class='btnDescuento' href='../pages/contacto.html' href='pages/contacto.html'>¡Lo quiero!</a>",
         showCloseButton: true,
         showCancelButton: false,
         focusConfirm: false,
